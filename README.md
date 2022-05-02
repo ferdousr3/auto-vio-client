@@ -1,70 +1,61 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# X-fit
 
-## Available Scripts
+Live Website Link [x-fit](https://x-fit-8bd3b.web.app/).
 
-In the project directory, you can run:
+## Website Details
 
-### `npm start`
+Gym Website. Different features and functionality of this Website.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# Features Description: 
+There are some awesome features of this website are given bellow,
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 1.Find Your Best gym Trainer: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ True fitness guys know that personal trainers are more than just gym rats. They’re also armchair psychiatrists, one-person support groups, nutritionists, and, in some instances, long-time friends.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## 2.Low cost for all services: 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ Whether you’re passionate about fitness or signing up for your first ever membership, stepping into a top-quality gym can be the biggest motivator you’ll ever get. All around you, you’ll find pristine machines and weights, kept beautifully clean.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 3.Easy Payment and Safe Payment: 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ how to you payment? very simple payment and safe payment , we hide your all information.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 4.Online Gym Classes : 
 
-### Code Splitting
+ You can attend all classes by online, Fully support 10/7 per week.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## 5.Easy create account: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ very easy for create ann account and appointment for you, just put your valid email address ,Name, password verify email and enjoy services.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### usages font, framework & library:
+```
+React, Google-font:Archivo, firebase, tailwind CSS, heroicons, react-firebase-hooks, react-icons
+```
 
-### Deployment
+<!-- 1. css Framework.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### `firebase`
 
-### `npm run build` fails to minify
+firebase official Website.\
+ [https://react-bootstrap.github.io/](https://react-bootstrap.github.io/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+ $ npm install firebase
+``` -->
