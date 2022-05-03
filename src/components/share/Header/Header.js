@@ -26,9 +26,9 @@ export default function Example() {
         <>
           <div className=" border-b border-b-mains  mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative container mx-auto flex items-center justify-between h-16">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 left-0 flex items-center lg:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white  focus:outline-none ">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-second  focus:outline-none ">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -37,7 +37,7 @@ export default function Example() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex-1 flex items-center justify-center md:items-stretch lg:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <img className="w-24 block lg:hidden" src={Logo} alt="" />
 
@@ -45,7 +45,7 @@ export default function Example() {
                     <img className="w-24" src={Logo} alt="" />
                   </div>
                 </div>
-                <div className="hidden sm:block sm:ml-6  ">
+                <div className="hidden lg:block sm:ml-6  ">
                   <ul className="flex space-x-3 items-center ">
                     <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
                       <NavLink
@@ -57,25 +57,17 @@ export default function Example() {
                         Home
                       </NavLink>
                     </li>
+                    <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
                       <NavLink
                         className={({ isActive }) =>
                           isActive ? " text-white " : "   hover:text-white "
                         }
-                        to="/"
+                        to="/blogs"
                       >
-                        Home
+                        Blogs
                       </NavLink>
                     </li>
-                    <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
-                      <NavLink
-                        className={({ isActive }) =>
-                          isActive ? "text-white" : " hover:text-white "
-                        }
-                        to="/about"
-                      >
-                        About
-                      </NavLink>
-                    </li>
+
                     <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
                       <NavLink
                         className={({ isActive }) =>
@@ -84,6 +76,36 @@ export default function Example() {
                         to="/contact"
                       >
                         Contact
+                      </NavLink>
+                    </li>
+                    <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
+                      <NavLink
+                        className={({ isActive }) =>
+                          isActive ? "text-white" : " hover:text-white "
+                        }
+                        to="/additems"
+                      >
+                        Add Items
+                      </NavLink>
+                    </li>
+                    <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
+                      <NavLink
+                        className={({ isActive }) =>
+                          isActive ? "text-white" : " hover:text-white "
+                        }
+                        to="/manageitems"
+                      >
+                        Manage Items
+                      </NavLink>
+                    </li>
+                    <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
+                      <NavLink
+                        className={({ isActive }) =>
+                          isActive ? "text-white" : " hover:text-white "
+                        }
+                        to="/myitems"
+                      >
+                        My Items
                       </NavLink>
                     </li>
                   </ul>
@@ -168,24 +190,72 @@ export default function Example() {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block px-3 py-2 rounded-md text-base font-medium"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
-                >
-                  {item.name}
+          {/* mobile menu start */}
+
+          <Disclosure.Panel className="lg:hidden ">
+            <div className="px-4 pt-2 pb-1  text-center">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-white " : " hover:text-white   "
+                }
+                to="/"
+              >
+                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-semibold uppercase text-second">
+                  Home
                 </Disclosure.Button>
-              ))}
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-white" : " hover:text-white  "
+                }
+                to="/blogs"
+              >
+                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-semibold uppercase text-second  ">
+                  Blogs
+                </Disclosure.Button>
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-white" : " hover:text-white  "
+                }
+                to="/contact"
+              >
+                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-semibold uppercase text-second  ">
+                  Contact
+                </Disclosure.Button>
+              </NavLink>
+            </div>
+            <div className="px-4 pt-1 pb-1  text-center">
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-white " : " hover:text-white   "
+                }
+                to="/additems"
+              >
+                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-semibold uppercase text-second">
+                  Add Items
+                </Disclosure.Button>
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-white" : " hover:text-white  "
+                }
+                to="/manageitems"
+              >
+                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-semibold uppercase text-second  ">
+                  Manage Items
+                </Disclosure.Button>
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "text-white" : " hover:text-white  "
+                }
+                to="/myitems"
+              >
+                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-semibold uppercase text-second  ">
+                  My Items
+                </Disclosure.Button>
+              </NavLink>
             </div>
           </Disclosure.Panel>
         </>
