@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-6 py-6 lg:px-5 border-t border-mains mt-8  ">
             <div className="col-span-1 md:col-span-3 pt-4">
-              <div className="flex border max-w-[224px] border-six ">
+              <div className="flex border max-w-[225px] border-six ">
                 <input
                   className="  bg-transparent border-0 placeholder:text-xs  text-sm focus:outline-none py-1.5  flex items-center px-2  "
                   type="email"
@@ -117,7 +117,7 @@ const Footer = () => {
               <div className="flex lg:justify-end  ">
                 {socials.map((social) => (
                   <a
-                    className=" pl-8 text-2xl"
+                    className=" pl-8 text-2xl text-second hover:text-white "
                     key={social.name}
                     href={social.pathName}
                   >

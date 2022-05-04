@@ -1,4 +1,5 @@
 import Header from "./components/share/Header/Header";
+import "react-toastify/dist/ReactToastify.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Error from "./pages/Error/Error";
@@ -9,17 +10,23 @@ import AddItems from "./pages/AddItems/AddItems";
 import ManageItems from "./pages/ManageItems/ManageItems";
 import MyItems from "./pages/MyItems/MyItems";
 import Blogs from "./pages/Blogs/Blogs";
+import Login from "./pages/Login/Login";
+import LogOut from "./pages/Register/Register";
+import { ToastContainer } from "react-toastify";
+import Register from "./pages/Register/Register";
 
 function App() {
   return (
     <>
       <Header />
-      <main className="container mx-auto main-height pt-20">
+      <main className=" mx-auto main-height pt-16">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/additems" element={<AddItems />} />
           <Route path="/manageitems" element={<ManageItems />} />
           <Route path="/myitems" element={<MyItems />} />
@@ -29,6 +36,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <ToastContainer />
     </>
   );
 }
