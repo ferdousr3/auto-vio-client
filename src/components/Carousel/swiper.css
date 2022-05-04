@@ -1,5 +1,6 @@
 .mySwiper img{
   width: 100%;
+  max-height: 400px !important;
 }
 @media (min-width: 320) {
   .mySwiper img{

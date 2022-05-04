@@ -2,23 +2,27 @@ import React from "react";
 
 import { NavLink, Outlet } from "react-router-dom";
 
-
 const ManageItems = () => {
   return (
     <>
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5">
-          <div className="col-span-1 md:col-span-2 lg:col-span-2 pt-12">
-            <ul>
-              <li>
+        <div className=" max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2 pt-10 lg:pt-24">
+            
+            <ul className="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+              <li className="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                 <NavLink to="myitems">All Items</NavLink>
               </li>
-              <li>
+              <li className="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
                 <NavLink to="additems">additems</NavLink>
               </li>
+              <li className="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+                Messages
+              </li>
+              <li className="w-full px-4 py-2 rounded-b-lg">Download</li>
             </ul>
           </div>
-          
+
           <div className="col-span-1 md:col-span-3 lg:col-span-3">
             <Outlet />
           </div>

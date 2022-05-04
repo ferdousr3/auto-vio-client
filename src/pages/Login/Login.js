@@ -32,10 +32,6 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
-  // let errorMessages;
-  // if (error || customError) {
-  //   errorMessages = <p className="text-sm text-red-900">{error?.message}</p>;
-  // }
   let errorMessages;
   if (customError || error) {
     errorMessages = (
@@ -60,7 +56,7 @@ const Login = () => {
     setCustomError("");
     setPassword("");
     if (email !== "") {
-      console.log(email);
+
       await sendPasswordResetEmail(email);
       toast("Sent password Rest Link");
     } else if (email === "") {
