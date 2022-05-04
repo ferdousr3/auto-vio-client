@@ -14,6 +14,7 @@ import Login from "./pages/Login/Login";
 import LogOut from "./pages/Register/Register";
 import { ToastContainer } from "react-toastify";
 import Register from "./pages/Register/Register";
+import RequireAuth from './components/RequireAuth/RequireAuth'
 
 function App() {
   return (
@@ -27,9 +28,19 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/additems" element={<AddItems />} />
-          <Route path="/manageitems" element={<ManageItems />} />
-          <Route path="/myitems" element={<MyItems />} />
+
+          <Route
+            path="/manageitems"
+            element={
+              <RequireAuth>
+                <ManageItems />
+              </RequireAuth>
+            }
+          >
+            <Route path="myitems" element={<MyItems />} />
+            <Route path="additems" element={<AddItems />} />
+          </Route>
+
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Error />} />

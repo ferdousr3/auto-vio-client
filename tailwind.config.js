@@ -28,6 +28,7 @@ module.exports = {
         "6xl": "0px 4px 16px 0px rgb(248 96 77 / 11%)",
         "7xl": "0px 3px 15px 0px rgb(248 96 77 / 19%)",
       },
+     
     },
   },
   plugins: [],

@@ -70,7 +70,7 @@ export default function Example() {
                         Blogs
                       </NavLink>
                     </li>
-                    <li
+                    {/* <li
                       className={
                         user
                           ? "px-1 py-2 rounded-md text-sm font-semibold uppercase text-second"
@@ -85,7 +85,7 @@ export default function Example() {
                       >
                         Add Items
                       </NavLink>
-                    </li>
+                    </li> */}
                     <li
                       className={
                         user
@@ -102,7 +102,7 @@ export default function Example() {
                         Manage Items
                       </NavLink>
                     </li>
-                    <li
+                    {/* <li
                       className={
                         user
                           ? "px-1 py-2 rounded-md text-sm font-semibold uppercase text-second"
@@ -117,7 +117,7 @@ export default function Example() {
                       >
                         My Items
                       </NavLink>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>
