@@ -30,7 +30,7 @@ const SocialLogin = () => {
     <div>
       <div className="flex items-center justify-center">
         <span className="h-[1px] md:w-40 w-32 block  bg-gray-300 mr-2"></span>
-        <p>or</p>
+        <p className="font-semibold">or</p>
         <span className="h-[1px] md:w-40 w-32 block bg-gray-300 ml-2"></span>
       </div>
       <div className="py-2">{errorMessages}</div>

@@ -1,9 +1,8 @@
 import React from "react";
-import {  NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Fragment } from "react";
 import { Disclosure, Menu } from "@headlessui/react";
 import {
-  LockClosedIcon,
   MenuIcon,
   XIcon,
   LogoutIcon,
@@ -12,11 +11,7 @@ import {
 import Logo from "../../../images/logo/logo.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
-import { FaSignOutAlt } from "react-icons/fa";
 import { signOut } from "firebase/auth";
-
-
-
 
 export default function Example() {
   const [user] = useAuthState(auth);
@@ -45,11 +40,13 @@ export default function Example() {
               </div>
               <div className="flex-1 flex items-center justify-center md:items-stretch lg:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <img className="w-24 block lg:hidden" src={Logo} alt="" />
+                  <Link to="/">
+                    <img className="w-24 block lg:hidden" src={Logo} alt="" />
 
-                  <div className="hidden lg:flex items-center h-8 w-auto">
-                    <img className="w-24" src={Logo} alt="" />
-                  </div>
+                    <div className="hidden lg:flex items-center h-8 w-auto">
+                      <img className="w-24" src={Logo} alt="" />
+                    </div>
+                  </Link>
                 </div>
                 <div className="hidden lg:block sm:ml-6  ">
                   <ul className="flex space-x-3 items-center ">
@@ -73,18 +70,13 @@ export default function Example() {
                         Blogs
                       </NavLink>
                     </li>
-
-                    <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
-                      <NavLink
-                        className={({ isActive }) =>
-                          isActive ? "text-white" : " hover:text-white "
-                        }
-                        to="/contact"
-                      >
-                        Contact
-                      </NavLink>
-                    </li>
-                    <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
+                    <li
+                      className={
+                        user
+                          ? "px-1 py-2 rounded-md text-sm font-semibold uppercase text-second"
+                          : "hidden"
+                      }
+                    >
                       <NavLink
                         className={({ isActive }) =>
                           isActive ? "text-white" : " hover:text-white "
@@ -94,7 +86,13 @@ export default function Example() {
                         Add Items
                       </NavLink>
                     </li>
-                    <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
+                    <li
+                      className={
+                        user
+                          ? "px-1 py-2 rounded-md text-sm font-semibold uppercase text-second"
+                          : "hidden"
+                      }
+                    >
                       <NavLink
                         className={({ isActive }) =>
                           isActive ? "text-white" : " hover:text-white "
@@ -104,7 +102,13 @@ export default function Example() {
                         Manage Items
                       </NavLink>
                     </li>
-                    <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
+                    <li
+                      className={
+                        user
+                          ? "px-1 py-2 rounded-md text-sm font-semibold uppercase text-second"
+                          : "hidden"
+                      }
+                    >
                       <NavLink
                         className={({ isActive }) =>
                           isActive ? "text-white" : " hover:text-white "
@@ -190,7 +194,10 @@ export default function Example() {
                 </Disclosure.Button>
               </NavLink>
             </div>
-            <div className="px-4 pt-1 pb-1  text-center">
+            <div
+         
+              className={user ? "px-4 pt-1 pb-1  text-center " : "hidden"}
+            >
               <NavLink
                 className={({ isActive }) =>
                   isActive ? "text-white " : " hover:text-white   "

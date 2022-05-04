@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
+  error,
 } from "react-firebase-hooks/auth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../../firebase.init";
@@ -24,18 +25,23 @@ const Login = () => {
 
   const from = location.state?.from?.pathname || "/home";
 
-  const handleEmailBlur = (event) => {
+  const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
-  const handlePasswordBlur = (event) => {
+  const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
+  // let errorMessages;
+  // if (error || customError) {
+  //   errorMessages = <p className="text-sm text-red-900">{error?.message}</p>;
+  // }
   let errorMessages;
-  if (error || customError) {
-    errorMessages = <p className="text-sm text-red-900">{error?.message}</p>;
+  if (customError || error) {
+    errorMessages = (
+      <p className="text-sm text-red-900">{customError?.message}</p>
+    );
   }
-
   useEffect(() => {
     if (user) {
       navigate(from, { replace: true });
@@ -49,13 +55,16 @@ const Login = () => {
     }
     signInWithEmailAndPassword(email, password);
   };
+
   const forgotPassword = async () => {
+    setCustomError("");
+    setPassword("");
     if (email !== "") {
       console.log(email);
       await sendPasswordResetEmail(email);
       toast("Sent password Rest Link");
     } else if (email === "") {
-      setCustomError("please input an Email");
+      setpasswordResetError("please input an Email");
       return;
     }
   };
@@ -88,13 +97,12 @@ const Login = () => {
                   Email address
                 </label>
                 <input
-                  onChange={handleEmailBlur}
+                  onChange={handleEmailChange}
                   id="email-address"
                   name="email"
                   type="email"
-                  autoComplete="email"
                   required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-four  text-four rounded-t-md focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
+                  className=" mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Email address"
                 />
               </div>
@@ -103,15 +111,19 @@ const Login = () => {
                   Password
                 </label>
                 <input
-                  onBlur={handlePasswordBlur}
+                  onChange={handlePasswordChange}
                   id="password"
                   name="password"
                   type="password"
-                  autoComplete="current-password"
                   required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-four text-four rounded-b-md focus:outline-none focus:ring-main focus:border-main focus:z-10 sm:text-sm"
+                  className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Password"
                 />
+              </div>
+              <div className="mt-4">
+                <p className={customError ? "mt-2 text-xs text-red" : "hidden"}>
+                  {customError}
+                </p>
               </div>
             </div>
 
@@ -120,13 +132,14 @@ const Login = () => {
               {(loading || sending) && <Loading />}
             </span>
             {/* error messages */}
+            <p className="text-sm text-red-900">{error?.message}</p>
 
             {errorMessages}
             <div>
               <button
                 // disabled={handleEmailBlur && handlePasswordBlur}
                 type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-main hover:bg-mains focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mains"
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium  text-white bg-main hover:bg-mains focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mains"
               >
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                   <LockClosedIcon
@@ -140,11 +153,11 @@ const Login = () => {
           </form>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <p className="my-0 text-sm text-four ">
+              <p className="my-0 text-sm text-eight font-semibold ">
                 New user please!
                 <Link
                   to="/register"
-                  className=" ml-1 font-medium text-main hover:text-mains"
+                  className=" ml-1  text-main hover:text-mains font-bold"
                 >
                   Sign up
                 </Link>
@@ -154,7 +167,7 @@ const Login = () => {
             <div className="text-sm">
               <button
                 onClick={forgotPassword}
-                className="font-medium text-main hover:text-mains"
+                className="font-bold text-main hover:text-mains"
               >
                 Forgot password?
               </button>

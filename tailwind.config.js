@@ -19,6 +19,7 @@ module.exports = {
         four: "#7A7A7A",
         six: "#4d4d4d",
         seven: "#141414",
+        eight: "#262626",
       },
       boxShadow: {
         "3xl": "0 15px 64px 0 rgb(21, 21, 21)",

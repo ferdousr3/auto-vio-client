@@ -1,0 +1,8 @@
+.mySwiper img{
+  width: 100%;
+}
+@media (min-width: 320) {
+  .mySwiper img{
+  width: 100%;
+}
+}

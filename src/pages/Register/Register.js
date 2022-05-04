@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { LockClosedIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
 import {
-  useCreateUserWithEmailAndPassword,
+  useCreateUserWithEmailAndPassword, error
   
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
@@ -25,10 +25,10 @@ const Register = () => {
     setEmail(event.target.value);
     console.log(email);
   };
-  const handlePasswordBlur = (event) => {
+  const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-  const handleConfirmPasswordBlur = (event) => {
+  const handleConfirmPasswordChange = (event) => {
     setConfirmPassword(event.target.value);
   };
   if (user) {
@@ -88,7 +88,7 @@ const Register = () => {
                   name="email"
                   type="email"
                   required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-four text-four rounded-t-md focus:outline-none focus:ring-main focus:border-main focus:z-10 sm:text-sm"
+                  className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Email address"
                 />
               </div>
@@ -97,12 +97,12 @@ const Register = () => {
                   Password
                 </label>
                 <input
-                  onBlur={handlePasswordBlur}
+                  onChange={handlePasswordChange}
                   id="password"
                   name="password"
                   type="password"
                   required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-four text-four  focus:outline-none focus:ring-main focus:border-main focus:z-10 sm:text-sm"
+                  className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Password"
                 />
               </div>
@@ -111,12 +111,12 @@ const Register = () => {
                   Confirm Password
                 </label>
                 <input
-                  onBlur={handleConfirmPasswordBlur}
+                  onChange={handleConfirmPasswordChange}
                   id="confirmpassword"
                   name="confirmpassword"
                   type="password"
                   required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-four text-four rounded-b-md focus:outline-none focus:ring-main focus:border-main focus:z-10 sm:text-sm"
+                  className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Confirm Password"
                 />
               </div>
@@ -134,11 +134,12 @@ const Register = () => {
               {loading && <Loading />}
             </span>
             {errorMessages}
+            <p className=" text-red-700 ">{error?.message}</p>
             <div>
               <button
                 onClick={handleCreateUser}
                 type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-main hover:bg-mains focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mains "
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium  text-white bg-main hover:bg-mains focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mains "
               >
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                   <LockClosedIcon
@@ -152,18 +153,18 @@ const Register = () => {
           </form>
           <div className="flex items-center">
             <div className="flex items-center">
-              <p className="my-0 text-sm text-four pl-1">
+              <p className="my-0 text-sm text-eight font-semibold pl-1">
                 already have account!
                 <Link
                   to="/login"
-                  className="ml-1 font-medium text-main hover:text-mains "
+                  className="ml-1 font-bold text-main hover:text-mains "
                 >
                   login
                 </Link>
               </p>
             </div>
           </div>
-       
+
           {/* google signup */}
           <SocialLogin />
         </div>

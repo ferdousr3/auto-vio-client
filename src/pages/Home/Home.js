@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
     {/* <PageTitle title='Home' /> */}
-      <section>
+      <section className='pt-0' >
         <Carousel />
       </section>
     </>
