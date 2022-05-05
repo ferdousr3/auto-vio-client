@@ -7,6 +7,7 @@ const AddItems = () => {
   const [img, setImg] = useState("");
   const [carouselImg, setcarouselImg] = useState("");
   const [price, setPrice] = useState("");
+  const [quantity, setquantity] = useState("");
   const [supplier, setSupplier] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -20,6 +21,9 @@ const AddItems = () => {
   const handlePrice = (event) => {
     setPrice(event.target.value);
   };
+  const handleQuantity = (event) => {
+    setquantity(event.target.value);
+  };
   const handleSupplier = (event) => {
     setSupplier(event.target.value);
   };
@@ -32,7 +36,15 @@ const AddItems = () => {
 
   const handleAddNewItem = (event) => {
     event.preventDefault();
-    const product = { img, carouselImg, price, supplier, name, description };
+    const product = {
+      img,
+      carouselImg,
+      price,
+      supplier,
+      name,
+      description,
+      quantity,
+    };
     // send data to the server
     fetch("http://localhost:5000/product", {
       method: "POST",
@@ -86,7 +98,6 @@ const AddItems = () => {
                   id="carouselmg"
                   name="carouselimg"
                   type="text"
-               
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Carousel img url (optional)"
                 />
@@ -103,6 +114,20 @@ const AddItems = () => {
                   required
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Price"
+                />
+              </div>
+              <div>
+                <label htmlFor="quantity" className="sr-only">
+                  Quantity
+                </label>
+                <input
+                  onChange={handleQuantity}
+                  id="quantity"
+                  name="quantity"
+                  type="number"
+                  required
+                  className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
+                  placeholder="Quantity"
                 />
               </div>
               <div>

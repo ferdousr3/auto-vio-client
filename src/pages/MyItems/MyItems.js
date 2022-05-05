@@ -1,8 +1,31 @@
-import { PlusSmIcon } from '@heroicons/react/outline';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { TrashIcon } from "@heroicons/react/outline";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import useProducts from "../../hooks/useProducts";
+import Modal from "../../components/Modal/Modal";
 
 const MyItems = () => {
+
+  const [products, setProducts] = useProducts([]);
+
+  const handleProductDelete = (id) => {
+    const proceed = window.confirm("Are you want to delete");
+    if (proceed) {
+      console.log("delete user", id);
+      const url = `http://localhost:5000/product/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            console.log("deleted");
+            const remaining = products.filter((product) => product._id !== id);
+            setProducts(remaining);
+          }
+        });
+    }
+  };
   return (
     <>
       <div className="  min-h-full flex items-center justify-center pt-8 pb-20 px-4 sm:px-6 lg:px-8">
@@ -11,71 +34,36 @@ const MyItems = () => {
             <h2 className="mt-6 text-center text-3xl font-base text-main">
               All Items List
             </h2>
-
           </div>
           {/* input from */}
-          <form className="mt-8 space-y-4" >
-            <input type="hidden" name="remember" defaultValue="true" />
-            <div className="rounded-md shadow-sm -space-y-px">
-              <div>
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <input
-              
-                  name="email"
-                  type="email"
-                  required
-                  className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
-                  placeholder="Email address"
-                />
+          {products.map((product) => (
+            <div
+              key={product._id}
+              className="p-3 flex flex-col items-center md:justify-between bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+            >
+              <img
+                className=" w-24 rounded-t-lg  h-14 md:rounded-none md:rounded-l-lg"
+                src={product.img}
+                alt={product.name}
+              />
+              <div className="flex flex-col justify-between p-4 leading-normal">
+                <h5 className="mb-2 text-lg uppercase font-bold tracking-tight text-mains dark:text-white">
+                  {product?.name}
+                </h5>
+                <p className="mb-3  text-eight dark:text-gray-400 font-semibold">
+                  Price: ${product.price}
+                </p>
               </div>
-              <div>
-                <label htmlFor="password" className="sr-only">
-                  Password
-                </label>
-                <input
-                  
-                  id="password"
-                  name="password"
-                  type="password"
-                  required
-                  className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
-                  placeholder="Password"
-                />
-              </div>
-              <div>
-                <label htmlFor="confirmpassword" className="sr-only">
-                  Confirm Password
-                </label>
-                <input
-               
-                  id="confirmpassword"
-                  name="confirmpassword"
-                  type="password"
-                  required
-                  className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
-                  placeholder="Confirm Password"
-                />
+              <div className="btn">
+                <button
+                  onClick={() => handleProductDelete(product._id)}
+                  className="flex justify-center items-center bg-main hover:bg-mains text-white w-10 h-10 rounded-full text-base font-semibold  "
+                >
+                  <TrashIcon className="w-5 h-5" />{" "}
+                </button>
               </div>
             </div>
-
-            <div>
-              <button
-                
-                type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium  text-white bg-main hover:bg-mains focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mains "
-              >
-                <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                  <PlusSmIcon
-                    className="h-5 w-5 text-white "
-                    aria-hidden="true"
-                  />
-                </span>
-                Add Product
-              </button>
-            </div>
-          </form>
+          ))}
         </div>
       </div>
     </>
