@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
 import "./swiper.css";
+import Loading from '../share/Loading/Loading'
 
 import { Autoplay, Pagination, EffectFade, Navigation } from "swiper";
 import useProducts from "../../hooks/useProducts";
@@ -27,7 +28,7 @@ const Carousel = () => {
         loop={true}
         modules={[Autoplay, Pagination, EffectFade, Navigation, Pagination]}
       >
-        <div className="container mySwiper">
+        {products ? <div className="container mySwiper">
           {products.map((product) => (
             <SwiperSlide key={product._id}>
               <img
@@ -53,7 +54,7 @@ const Carousel = () => {
               ></div>
             </SwiperSlide>
           ))}
-        </div>
+        </div> : <Loading /> }
       </Swiper>
     </>
   );
