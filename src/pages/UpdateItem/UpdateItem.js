@@ -1,67 +1,107 @@
-import { PlusSmIcon } from "@heroicons/react/outline";
-import React, { useState } from "react";
+import { UploadIcon } from "@heroicons/react/outline";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const AddItems = () => {
-  const [img, setImg] = useState("");
-  const [carouselImg, setCarouselImg] = useState("");
-  const [price, setPrice] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [supplier, setSupplier] = useState("");
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
+const UpdateItem = () => {
+  const [product, setProduct] = useState({});
+  // const [img, setImg] = useState("");
+  // const [carouselImg, setCarouselImg] = useState("");
+  // const [price, setPrice] = useState("");
+  // const [quantity, setQuantity] = useState("");
+  // const [supplier, setSupplier] = useState("");
+  // const [name, setName] = useState("");
+  // const [description, setDescription] = useState("");
 
-  const handleImgBlur = (event) => {
-    setImg(event.target.value);
+  const handleImg = (event) => {
+    const { img, ...rest } = product;
+    const newImg = event.target.value;
+    const updateImg = { img: newImg, ...rest };
+    setProduct(updateImg);
+   
+    // setImg(event.target.value);
   };
   const handleCarouselImg = (event) => {
-    setCarouselImg(event.target.value);
+    const { carouselImg, ...rest } = product;
+    const newCarouselImg = event.target.value;
+    const updateCarouselImg = { carouselImg: newCarouselImg, ...rest };
+    setProduct(updateCarouselImg);
+
+    // setCarouselImg(event.target.value);
   };
   const handlePrice = (event) => {
-    setPrice(event.target.value);
+    const { price, ...rest } = product;
+    const newPrice = event.target.value;
+    const updatePrice = { price: newPrice, ...rest };
+    setProduct(updatePrice);
+
+    // setPrice(event.target.value);
   };
   const handleQuantity = (event) => {
-    setQuantity(event.target.value);
+    const { quantity, ...rest } = product;
+    const newQuantity = event.target.value;
+    const updateQuantity = { quantity: newQuantity, ...rest };
+    setProduct(updateQuantity);
+
+    // setQuantity(event.target.value);
   };
   const handleSupplier = (event) => {
-    setSupplier(event.target.value);
+    const { supplier, ...rest } = product;
+    const newSupplier = event.target.value;
+    const updateSupplier = { quantity: newSupplier, ...rest };
+    setProduct(updateSupplier);
+
+    // setSupplier(event.target.value);
   };
   const handleName = (event) => {
-    setName(event.target.value);
+    const { name, ...rest } = product;
+    const newName = event.target.value;
+    const updateName = { name: newName, ...rest };
+    setProduct(updateName);
+
+    // setName(event.target.value);
   };
   const handleDescription = (event) => {
-    setDescription(event.target.value);
+    const { description, ...rest } = product;
+    const newDescription = event.target.value;
+    const updateDescription = { description: newDescription, ...rest };
+    setProduct(updateDescription);
+    console.log(updateDescription);
+    // setDescription(event.target.value);
   };
 
-  const handleUpdatedItem = (event) => {
+  // data load from api by id
+  useEffect(() => {
+    // const url = `http://localhost:5000/product/${id}`;
+    const url = `https://auto-vio.herokuapp.com/product/${id}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setProduct(data));
+  }, []);
+  // data update to api
+  const handleUpdateItem = (event) => {
     event.preventDefault();
-    const updatedProduct = {
-      img,
-      carouselImg,
-      price,
-      supplier,
-      name,
-      description,
-      quantity,
-    };
     // send data to the server
-    const url=`https://auto-vio.herokuapp.com/product`
-    // const url = `http://localhost:5000/product`;
+    // const url = `http://localhost:5000/product/${id}`;
+    const url = `https://auto-vio.herokuapp.com/product/${id}`;
     fetch(url, {
-      method: "POST",
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(updatedProduct),
+      body: JSON.stringify(product),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        
       });
+    
 
     event.target.reset();
-    toast(`update ${name} successfully`);
+    toast(`update Product successfully`);
   };
+
+  const { id } = useParams();
 
   return (
     <>
@@ -69,11 +109,12 @@ const AddItems = () => {
         <div className="max-w-sm w-full space-y-4">
           <div>
             <h2 className="mt-6 text-center text-3xl font-base text-main">
-              Add New Product
+              Update Item for{" "}
+              <span className="uppercase font-semibold">{product.name}</span>
             </h2>
           </div>
           {/* input from */}
-          <form className="mt-8 space-y-4" onSubmit={handleUpdatedItem}>
+          <form className="mt-8 space-y-4" onSubmit={handleUpdateItem}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
@@ -81,13 +122,13 @@ const AddItems = () => {
                   img
                 </label>
                 <input
-                  onBlur={handleImgBlur}
+                  onChange={handleImg}
                   id="img"
                   name="img"
                   type="text"
-                  required
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Image url"
+                  value={product.img || ""}
                 />
               </div>
               <div>
@@ -99,9 +140,9 @@ const AddItems = () => {
                   id="carouselmg"
                   name="carouselimg"
                   type="text"
-                  required
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
-                  placeholder="Carousel img url"
+                  placeholder="Carousel img url (optional)"
+                  value={product.carouselImg || ""}
                 />
               </div>
               <div>
@@ -113,9 +154,9 @@ const AddItems = () => {
                   id="price"
                   name="price"
                   type="number"
-                  required
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Price"
+                  value={product.price || ""}
                 />
               </div>
               <div>
@@ -127,9 +168,9 @@ const AddItems = () => {
                   id="quantity"
                   name="quantity"
                   type="number"
-                  required
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Quantity"
+                  value={product.quantity || ""}
                 />
               </div>
               <div>
@@ -141,9 +182,9 @@ const AddItems = () => {
                   id="supplier"
                   name="supplier"
                   type="text"
-                  required
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Supplier name"
+                  value={product.supplier || ""}
                 />
               </div>
               <div>
@@ -155,9 +196,9 @@ const AddItems = () => {
                   id="name"
                   name="name"
                   type="text"
-                  required
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Name"
+                  value={product.name || ""}
                 />
               </div>
               <div>
@@ -169,9 +210,9 @@ const AddItems = () => {
                   id="description"
                   name="description"
                   type="text"
-                  required
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Description"
+                  value={product.description || ""}
                 />
               </div>
             </div>
@@ -182,12 +223,12 @@ const AddItems = () => {
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium  text-white bg-main hover:bg-mains focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mains "
               >
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                  <PlusSmIcon
+                  <UploadIcon
                     className="h-5 w-5 text-white "
                     aria-hidden="true"
                   />
                 </span>
-                Add Product
+                Update Product
               </button>
             </div>
           </form>
@@ -197,4 +238,4 @@ const AddItems = () => {
   );
 };
 
-export default AddItems;
+export default UpdateItem;

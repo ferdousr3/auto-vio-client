@@ -8,6 +8,7 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import Logo from "../../../images/logo/logo.png";
+import useProducts from '../../../hooks/useProducts'
 
 const socials = [
   { name: "facebook", pathName: "home", icon: <FaFacebookF /> },
@@ -17,6 +18,8 @@ const socials = [
 ];
 
 const Footer = () => {
+
+  const [products] = useProducts([])
   const date = new Date();
   const year = date.getFullYear();
   return (
@@ -29,38 +32,24 @@ const Footer = () => {
                 Models
               </h2>
               <ul className="text-second dark:text-gray-400 font-medium text-sm py-3">
-                <li className="mb-4">
-                  <Link to="#" className="hover:underline">
-                    Genes Car
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
-                    Tailwind CSS
-                  </Link>
-                </li>
+                {products.map((product) => (
+                  <li key={product._id}  className="mb-4">
+                    <Link to="#" className="hover:underline uppercase">
+                      {product.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
             <div className="col-span-1 md:col-span-3 lg:col-span-3 xl:col-span-1">
               <h2 className="mb-6 text-base font-semibold text-white uppercase dark:text-white pt-4">
-                Models
+                Members
               </h2>
               <ul className="text-second dark:text-gray-400 font-medium text-sm py-3">
                 <li className="mb-4">
                   <Link to="#" className="hover:underline">
-                    Genes Car
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="https://tailwindcss.com/"
-                    className="hover:underline"
-                  >
-                    Tailwind CSS
+                   Digital Services
                   </Link>
                 </li>
               </ul>

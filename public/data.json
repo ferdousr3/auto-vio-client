@@ -1,0 +1,74 @@
+[
+  {
+    "img": "https://i.ibb.co/CQLr0Xq/g70.png",
+    "carouselImg": "https://i.ibb.co/VWkZxdv/gv70.jpg",
+    "price": "10000",
+    "supplier": "Genesis",
+    "name": "gv70",
+    "quantity": "10",
+    "description": "From exteriors that harmonize strength and athleticism to interiors that maximize the beauty of white space, the unique characteristic of the Genesis GV70 delivers new inspiration to your everyday life."
+  },
+  {
+    "img": "https://i.ibb.co/7XsWtLB/gv80.png",
+    "carouselImg": "https://i.ibb.co/rv0d2bj/g80.jpg",
+    "price": "12000",
+    "supplier": "Genesis",
+    "name": "Gv80",
+    "quantity": "10",
+    "description": "The second row independent seats and a center console with the cup holders, console box and wireless charging system enhance luxury and convenience, providing a comfortable experience for passengers."
+  },
+  {
+    "img": "https://i.ibb.co/wdQTvDn/g80.png",
+    "carouselImg": "https://i.ibb.co/L1GYKx5/g80ev.jpg",
+    "price": "150000",
+    "supplier": "Genesis",
+    "name": "G8 ev",
+    "quantity": "10",
+    "description": "The Electrified G80, the first EV model by Genesis, presents a new standard for luxury electric sedans with its high levels of performance and technology."
+  },
+  {
+    "img": "https://i.ibb.co/GczVp5q/g80-n.png",
+    "carouselImg": "https://i.ibb.co/0yRHXKc/g80-ext.jpg",
+    "price": "10000",
+    "supplier": "Genesis",
+    "name": "G80 SPORT",
+    "quantity": "102",
+    "description": " A reborn athletic elegance-the Genesis G80 Sport has inherited the luxurious sensations and conveniences of the all-new G80, blending a perfectly balanced look with a sporty touch only befitting of a luxury sport sedan."
+  },
+  {
+    "img": "https://i.ibb.co/MsSnqMv/g90.png",
+    "carouselImg": "https://i.ibb.co/LJcYgv4/g90.jpg",
+    "price": "150000",
+    "supplier": "Genesis",
+    "name": "G90",
+    "quantity": "102",
+    "description": " G90 introduces a bold new direction that premium cars should pursue, with advanced assistance features that make driving easier, along with a variety of new technologies that add value to passengers’ journeys."
+  },
+  {
+    "img": "https://i.ibb.co/bvCQ06b/gv60.png",
+    "carouselImg": "https://i.ibb.co/ZW91Cgn/gv60.jpg",
+    "price": "110000",
+    "supplier": "Genesis",
+    "name": "Gv60 ev",
+    "quantity": "12",
+    "description": " GV60 will set a new standard for luxury electric vehicles with a powerful driving performance and various key features based on interactions with customers.The GV60 is the first dedicated EV model with the most dynamic design, representing Genesis’ electrification."
+  },
+  {
+    "img": "https://i.ibb.co/q0Qs8CW/gv70el.png",
+    "carouselImg": "https://i.ibb.co/896jBR6/gv60.jpg",
+    "price": "70000",
+    "supplier": "Genesis",
+    "name": "Gv70 ev",
+    "quantity": "121",
+    "description": " The Electrified GV70 is a luxury electric SUV model that boasts a dynamic appearance, spacious interior emphasizing the ‘Beauty of White Space,’ new driver-oriented technologies, and powerful vehicle performance."
+  },
+  {
+    "img": "https://i.ibb.co/pjq2Lxj/gv70new.png",
+    "carouselImg": "https://i.ibb.co/1z0HPYB/gv70-1.jpg",
+    "price": "190000",
+    "supplier": "Genesis",
+    "name": "Gv70 new",
+    "quantity": "112",
+    "description": "Introducing the GV70, a premium urban SUV sporting a design that maximizes the athletic elegance of Genesis, a dynamic driving experience, an interior that further enhances the beauty of white space, and state-of-the-art technology for connected vehicles."
+  }
+]

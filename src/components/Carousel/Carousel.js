@@ -6,18 +6,12 @@ import "swiper/css/pagination";
 import "swiper/css";
 import "./swiper.css";
 
-import {
-  Autoplay,
-  Pagination,
-  EffectFade,
-  Navigation
-  
-} from "swiper";
+import { Autoplay, Pagination, EffectFade, Navigation } from "swiper";
 import useProducts from "../../hooks/useProducts";
 
 const Carousel = () => {
-  const [products, setProducts] = useProducts([]);
-  
+  const [products] = useProducts([]);
+
   return (
     <>
       <Swiper
@@ -49,23 +43,16 @@ const Carousel = () => {
                   {product.name}
                 </p>
               </div>
-              <div className=" left-72 absolute top-48 z-20 block min-w-sm h-4 border-2 bg-white text-white ">
-                <span className="  "></span>
-              </div>
+              <div
+                className=" hidden left-0 absolute top-[50%] w-60 z-20 xl:block min-w-sm h-1
+              border border-second  bg-white text-white "
+              ></div>
+              <div
+                className=" hidden left-0 absolute top-[58%] w-60 z-20 xl:block min-w-sm h-1
+              border border-second  bg-white text-white "
+              ></div>
             </SwiperSlide>
           ))}
-          {/* <SwiperSlide>
-            <img src={carousel2} alt="all" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={carousel3} alt="all" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={carousel4} alt="all" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={carousel5} alt="all" />
-          </SwiperSlide> */}
         </div>
       </Swiper>
     </>
