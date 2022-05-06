@@ -93,11 +93,11 @@ const Footer = () => {
             <div className="col-span-1 md:col-span-3 pt-4">
               <div className="flex border max-w-[225px] border-six ">
                 <input
-                  className="  bg-transparent border-0 placeholder:text-xs  text-sm focus:outline-none py-1.5  flex items-center px-2  "
+                  className="bg-transparent max-w-[200px] border-0 placeholder:text-xs  text-sm focus:outline-none py-1.5  flex items-center px-2"
                   type="email"
                   placeholder="Your Email"
                 />
-                <button className=" hover:text-white  border-l border-l-six text-second  uppercase text-sm px-4 flex justify-center items-center py-1 border-0 ">
+                <button className="  hover:text-white  border-l border-l-six text-second  uppercase text-sm px-4 flex justify-center items-center py-1 border-0 ">
                   <FaPaperPlane />
                 </button>
               </div>

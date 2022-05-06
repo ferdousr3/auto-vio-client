@@ -41,10 +41,10 @@ const MyItems = () => {
           {products.map((product) => (
             <div
               key={product._id}
-              className="p-3 flex flex-col items-center md:justify-between bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+              className=" px-2 sm:p-3 flex flex-row justify-between items-center md:justify-between bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
             >
               <img
-                className=" w-24 rounded-t-lg  h-14 md:rounded-none md:rounded-l-lg"
+                className="sm:block w-14 h-10   sm:w-24 rounded-t-lg  sm:h-14 md:rounded-none md:rounded-l-lg"
                 src={product.img}
                 alt={product.name}
               />
@@ -52,22 +52,22 @@ const MyItems = () => {
                 <h5 className="mb-1 text-base uppercase font-bold tracking-tight text-mains dark:text-white">
                   {product?.name}
                 </h5>
-                <p className="mb-1  text-eight dark:text-gray-400 font-semibold">
+                <p className="mb-1 hidden sm:block  text-eight dark:text-gray-400 font-semibold">
                   Price: ${product.price}
                 </p>
                 <p className="mb-1  text-eight dark:text-gray-400 font-semibold">
                   Stock: {product.quantity}
                 </p>
               </div>
-              <div className="btn">
+              <div className="mt-2 md:mb-0">
                 <NavLink
                   to={`/manageitems/updateitem/${product._id}`}
-                  className="flex justify-center items-center bg-main hover:bg-mains text-white w-10 h-10 rounded-full text-base font-semibold  "
+                  className=" flex justify-center items-center bg-main hover:bg-mains text-white w-10 h-10 rounded-full text-base font-semibold  "
                 >
                   <PencilAltIcon className="w-5 h-5" />
                 </NavLink>
               </div>
-              <div className="btn">
+              <div className="mt-2 md:mb-0 ">
                 <button
                   onClick={() => handleProductDelete(product._id)}
                   className="flex justify-center items-center bg-red-500 hover:bg-red-400 text-main w-10 h-10 rounded-full text-base font-semibold  "
