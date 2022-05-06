@@ -32,7 +32,7 @@ const Carousel = () => {
           {products.map((product) => (
             <SwiperSlide key={product._id}>
               <img
-                className="relative w-[100%] h-auto xl:h-[500px]"
+                className="relative w-[100%] h-[150px] md:h-[400px] xl:h-[500px]"
                 src={product?.carouselImg}
                 alt="all"
               />
