@@ -49,10 +49,6 @@ const Product = () => {
                 </div>
               </div>
             ))}
-
-            {/* <div className="col-span-1 md:col-span-3 lg:col-span-2 xl:col-span-1">j</div>
-            <div className="col-span-1 md:col-span-3 lg:col-span-2 xl:col-span-1">j</div>
-            <div className="col-span-1 md:col-span-3 lg:col-span-2 xl:col-span-1">j</div> */}
           </div>
         </div>
       </div>

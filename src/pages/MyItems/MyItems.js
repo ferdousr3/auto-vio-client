@@ -59,7 +59,7 @@ const MyItems = () => {
                   Stock: {product.quantity}
                 </p>
               </div>
-              <div className="mt-2 md:mb-0">
+              <div className="">
                 <NavLink
                   to={`/manageitems/updateitem/${product._id}`}
                   className=" flex justify-center items-center bg-main hover:bg-mains text-white w-10 h-10 rounded-full text-base font-semibold  "
@@ -67,7 +67,7 @@ const MyItems = () => {
                   <PencilAltIcon className="w-5 h-5" />
                 </NavLink>
               </div>
-              <div className="mt-2 md:mb-0 ">
+              <div className="">
                 <button
                   onClick={() => handleProductDelete(product._id)}
                   className="flex justify-center items-center bg-red-500 hover:bg-red-400 text-main w-10 h-10 rounded-full text-base font-semibold  "

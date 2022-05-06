@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { LockClosedIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
 import {
-  useCreateUserWithEmailAndPassword, error
+  useCreateUserWithEmailAndPassword
   
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
@@ -52,7 +52,13 @@ const Register = () => {
       return;
     }
     createUserWithEmailAndPassword(email, password);
-    toast("Thank You for Registration");
+    if(user){
+      toast("Thank You for Registration")
+      
+    }
+    else if(!user){
+       toast("This Email have already an Account");
+    }
   };
 
   return (

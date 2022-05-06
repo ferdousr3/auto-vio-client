@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from '../../components/Carousel/Carousel';
 import Product from '../../components/Products/Product';
-import PageTitle from '../../components/share/PageTitle/PageTitle';
+// import PageTitle from '../../components/share/PageTitle/PageTitle';
 
 
 const Home = () => {

@@ -3,20 +3,20 @@ import React, { useEffect, useState } from "react";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
-  error,
+  
 } from "react-firebase-hooks/auth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../../components/share/Loading/Loading";
 import { toast } from "react-toastify";
 import SocialLogin from "../../components/share/SocialLogin/SocialLogin";
-import PageTitle from "../../components/share/PageTitle/PageTitle";
+// import PageTitle from "../../components/share/PageTitle/PageTitle";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [customError, setCustomError] = useState("");
-  const [passwordResetError, setpasswordResetError] = useState("");
+  const [passwordResetError, setPasswordResetError] = useState("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
@@ -60,7 +60,7 @@ const Login = () => {
       await sendPasswordResetEmail(email);
       toast("Sent password Rest Link");
     } else if (email === "") {
-      setpasswordResetError("please input an Email");
+      setPasswordResetError("please input an Email");
       return;
     }
   };
@@ -129,7 +129,7 @@ const Login = () => {
             </span>
             {/* error messages */}
             <p className="text-sm text-red-900">{error?.message}</p>
-
+            {passwordResetError}
             {errorMessages}
             <div>
               <button

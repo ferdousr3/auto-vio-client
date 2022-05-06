@@ -4,22 +4,17 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const UpdateItem = () => {
+  const { id } = useParams();
   const [product, setProduct] = useState({});
-  // const [img, setImg] = useState("");
-  // const [carouselImg, setCarouselImg] = useState("");
-  // const [price, setPrice] = useState("");
-  // const [quantity, setQuantity] = useState("");
-  // const [supplier, setSupplier] = useState("");
-  // const [name, setName] = useState("");
-  // const [description, setDescription] = useState("");
 
+  
   const handleImg = (event) => {
     const { img, ...rest } = product;
     const newImg = event.target.value;
     const updateImg = { img: newImg, ...rest };
     setProduct(updateImg);
    
-    // setImg(event.target.value);
+
   };
   const handleCarouselImg = (event) => {
     const { carouselImg, ...rest } = product;
@@ -27,7 +22,7 @@ const UpdateItem = () => {
     const updateCarouselImg = { carouselImg: newCarouselImg, ...rest };
     setProduct(updateCarouselImg);
 
-    // setCarouselImg(event.target.value);
+    
   };
   const handlePrice = (event) => {
     const { price, ...rest } = product;
@@ -35,7 +30,7 @@ const UpdateItem = () => {
     const updatePrice = { price: newPrice, ...rest };
     setProduct(updatePrice);
 
-    // setPrice(event.target.value);
+    
   };
   const handleQuantity = (event) => {
     const { quantity, ...rest } = product;
@@ -43,7 +38,7 @@ const UpdateItem = () => {
     const updateQuantity = { quantity: newQuantity, ...rest };
     setProduct(updateQuantity);
 
-    // setQuantity(event.target.value);
+    
   };
   const handleSupplier = (event) => {
     const { supplier, ...rest } = product;
@@ -51,7 +46,7 @@ const UpdateItem = () => {
     const updateSupplier = { quantity: newSupplier, ...rest };
     setProduct(updateSupplier);
 
-    // setSupplier(event.target.value);
+    
   };
   const handleName = (event) => {
     const { name, ...rest } = product;
@@ -59,15 +54,15 @@ const UpdateItem = () => {
     const updateName = { name: newName, ...rest };
     setProduct(updateName);
 
-    // setName(event.target.value);
+    
   };
   const handleDescription = (event) => {
     const { description, ...rest } = product;
     const newDescription = event.target.value;
     const updateDescription = { description: newDescription, ...rest };
     setProduct(updateDescription);
-    console.log(updateDescription);
-    // setDescription(event.target.value);
+    
+    
   };
 
   // data load from api by id
@@ -77,7 +72,7 @@ const UpdateItem = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
-  }, []);
+  }, [id]);
   // data update to api
   const handleUpdateItem = (event) => {
     event.preventDefault();
@@ -93,15 +88,15 @@ const UpdateItem = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        
+        event.target.reset();
       });
     
 
-    event.target.reset();
+    
     toast(`update Product successfully`);
   };
 
-  const { id } = useParams();
+  
 
   return (
     <>

@@ -91,13 +91,13 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-6 py-6 lg:px-5 border-t border-mains mt-8  ">
             <div className="col-span-1 md:col-span-3 pt-4">
-              <div className="flex border max-w-[225px] border-six ">
+              <div className=" flex justify border w-[225px] border-six ">
                 <input
                   className="bg-transparent max-w-[200px] border-0 placeholder:text-xs  text-sm focus:outline-none py-1.5  flex items-center px-2"
                   type="email"
                   placeholder="Your Email"
                 />
-                <button className="  hover:text-white  border-l border-l-six text-second  uppercase text-sm px-4 flex justify-center items-center py-1 border-0 ">
+                <button className="  hover:text-white px-4  border-l border-l-six text-second  uppercase text-sm   w-10 py-1 border-0 ">
                   <FaPaperPlane />
                 </button>
               </div>
