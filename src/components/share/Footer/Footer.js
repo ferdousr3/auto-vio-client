@@ -8,7 +8,7 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import Logo from "../../../images/logo/logo.png";
-import useProducts from '../../../hooks/useProducts'
+import useProducts from "../../../hooks/useProducts";
 
 const socials = [
   { name: "facebook", pathName: "home", icon: <FaFacebookF /> },
@@ -18,15 +18,19 @@ const socials = [
 ];
 
 const Footer = () => {
-
-  const [products] = useProducts([])
+  const [products] = useProducts([]);
   const date = new Date();
   const year = date.getFullYear();
+
+    const handleSubscribeSubmit = (event) => {
+      event.preventDefault();
+      
+    };
   return (
     <>
       <footer className="p-4 bg-main text-second">
         <div className="container mx-auto pt-8">
-          <div className=" grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-4   ">
+          <div className=" grid grid-cols-2 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-4   ">
             <div className="mb-6 md:mb-0 col-span-1 md:col-span-3 lg:col-span-3 xl:col-span-1 ">
               <h2 className="mb-6 text-base font-semibold text-white uppercase dark:text-white pt-4">
                 Models
@@ -91,7 +95,7 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-6 py-6 lg:px-5 border-t border-mains mt-8  ">
             <div className="col-span-1 md:col-span-3 pt-4">
-              <div className=" mx-auto sm:mx-0 px-4 flex justify-between border w-[225px] border-six ">
+              {/* <div className=" mx-auto sm:mx-0 px-4 flex justify-between border w-[225px] border-six ">
                 <input
                   className="  bg-transparent border-0 placeholder:text-xs  text-sm focus:outline-none py-1.5  flex items-center "
                   type="email"
@@ -100,7 +104,27 @@ const Footer = () => {
                 <button className="  hover:text-white   border-l border-l-six text-second  uppercase text-sm pl-4    py-1 border-0 ">
                   <FaPaperPlane />
                 </button>
-              </div>
+              </div> */}
+
+              <form
+                className="relative max-w-xs"
+                onSubmit={handleSubscribeSubmit}
+              >
+                <div className="flex absolute inset-y-0 left-0 items-center pl-3 ">
+                  <button
+                    type="submit"
+                    className="hover:text-white text-second text-sm cursor-pointer "
+                  >
+                    <FaPaperPlane />
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  id="input-group-1"
+                  className="bg-transparent border  border-six  placeholder:text-xs  text-sm focus:outline-none  text-second  focus:border-eight block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="name@flowbite.com"
+                />
+              </form>
             </div>
             <div className="col-span-1 md:col-span-3  pt-4">
               <div className="flex lg:justify-end  ">

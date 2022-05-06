@@ -17,6 +17,7 @@ module.exports = {
         second: "#bbb",
         third: "#151515",
         four: "#7A7A7A",
+        five: "#af6249",
         six: "#4d4d4d",
         seven: "#141414",
         eight: "#262626",
@@ -29,7 +30,6 @@ module.exports = {
         "6xl": "0px 4px 16px 0px rgb(248 96 77 / 11%)",
         "7xl": "0px 3px 15px 0px rgb(248 96 77 / 19%)",
       },
-     
     },
   },
   plugins: [],

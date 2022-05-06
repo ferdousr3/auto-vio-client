@@ -24,3 +24,7 @@ code {
 .main-height {
   min-height: 65vh;
 }
+.required:after {
+    content:" *";
+    color: #af6249;
+  }
