@@ -12,8 +12,8 @@ const DeliveryItem = () => {
  
   // data load from api by id
   useEffect(() => {
-    const url = `http://localhost:5000/product/${id}`;
-    // const url = `https://auto-vio.herokuapp.com/product/${id}`;
+    // const url = `http://localhost:5000/product/${id}`;
+    const url = `https://auto-vio.herokuapp.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
