@@ -13,7 +13,8 @@ const MyItems = () => {
   const [products, setProducts] = useState([])
   useEffect(()=>{
     const email = user.email
-    const url =`http://localhost:5000/myproduct?email=${email}`
+    const url = `https://auto-vio.herokuapp.com/myproduct?email=${email}`;
+    // const url =`http://localhost:5000/myproduct?email=${email}`
     fetch(url)
     .then(res => res.json())
     .then(data => setProducts(data))
@@ -25,8 +26,8 @@ const MyItems = () => {
     const proceed = window.confirm("Are you want to delete");
     if (proceed) {
       
-      const url = `http://localhost:5000/product/${id}`;
-      // const url = `https://auto-vio.herokuapp.com/product/${id}`;
+      // const url = `http://localhost:5000/product/${id}`;
+      const url = `https://auto-vio.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
