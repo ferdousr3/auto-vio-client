@@ -52,7 +52,7 @@ const Footer = () => {
               </h2>
               <ul className="text-second dark:text-gray-400 font-medium text-sm py-3">
                 <li className="mb-4">
-                  <Link to="#" className="hover:underline">
+                  <Link to="digitalservice" className="hover:underline">
                     Digital Services
                   </Link>
                 </li>
@@ -81,12 +81,12 @@ const Footer = () => {
               </h2>
               <ul className="text-second font-medium text-sm dark:text-gray-400 py-3">
                 <li className="mb-4">
-                  <Link to="#" className="hover:underline">
+                  <Link to="/privacy" className="hover:underline">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="hover:underline">
+                  <Link to="/terms" className="hover:underline">
                     Terms &amp; Conditions
                   </Link>
                 </li>
@@ -95,17 +95,6 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-6 py-6 lg:px-5 border-t border-mains mt-8  ">
             <div className="col-span-1 md:col-span-3 pt-4">
-              {/* <div className=" mx-auto sm:mx-0 px-4 flex justify-between border w-[225px] border-six ">
-                <input
-                  className="  bg-transparent border-0 placeholder:text-xs  text-sm focus:outline-none py-1.5  flex items-center "
-                  type="email"
-                  placeholder="Your Email"
-                />
-                <button className="  hover:text-white   border-l border-l-six text-second  uppercase text-sm pl-4    py-1 border-0 ">
-                  <FaPaperPlane />
-                </button>
-              </div> */}
-
               <form
                 className="relative max-w-xs "
                 onSubmit={handleSubscribeSubmit}

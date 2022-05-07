@@ -10,11 +10,11 @@ const Award = () => {
           src={award}
           alt="auto-vio award"
         />
-        <div className="container max-w-lg absolute overflow-hidden top-[35%] sm:top-[30%] z-10 sm:ml-4 ">
-          <h1 className=" text-white font-normal sm:text-xl uppercase sm:font-normal pb-1 sm:pb-3">
+        <div className="container max-w-lg absolute overflow-hidden top-[30%] sm:top-[30%] z-10 sm:ml-4 ">
+          <h1 className=" text-white font-normal text-sm sm:text-xl uppercase sm:font-normal pb-1 sm:pb-3">
             2022 red dots Awards
           </h1>
-          <h2 className=" text-white font-normal text-base sm:text-4xl uppercase sm:font-light">
+          <h2 className=" text-white font-normal text-sm sm:text-4xl uppercase sm:font-light">
             GV60 WINS 2022 RED DOT AWARD FOR PRODUCT DESIGN
           </h2>
           <p className=" text-second text-xs sm:text-base font-normal pt-1 sm:pt-3 ">

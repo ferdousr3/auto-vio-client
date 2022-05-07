@@ -18,6 +18,7 @@ export default function Example() {
   const handleSignOut = () => {
     signOut(auth);
   };
+ 
   return (
     <Disclosure
       as="nav"
@@ -102,7 +103,7 @@ export default function Example() {
                       <img
                         className="h-8 w-8 rounded-full"
                         src={user ? user?.photoURL : "hidden"}
-                        alt=""
+                        alt={user?.displayName}
                       />
                     </Menu.Button>
                   </div>

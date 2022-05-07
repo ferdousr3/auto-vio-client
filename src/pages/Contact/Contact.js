@@ -27,7 +27,7 @@ const Contact = () => {
                   <input
                     type="text"
                     id="name"
-                    className="shadow-sm text-lg bg-gray-50 border-b border-b-[#e5e5e5] text-main rounded-sm focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-lg placeholder-[#afafaf] dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    className=" text-lg bg-transparent border-b border-b-[#e5e5e5] text-main rounded-sm focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-lg placeholder-[#afafaf] dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:-light"
                     required
                     placeholder="Your Name"
                   />
@@ -42,7 +42,7 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
-                    className="shadow-sm text-lg bg-gray-50 border-b border-b-[#e5e5e5] text-main rounded-sm focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-lg placeholder-[#afafaf] dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    className=" text-lg bg-transparent border-b border-b-[#e5e5e5] text-main rounded-sm focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-lg placeholder-[#afafaf] dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:-light"
                     required
                     placeholder="exmp@mail.com"
                   />
@@ -58,7 +58,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="title"
-                  className="shadow-sm text-lg bg-gray-50 border-b border-b-[#e5e5e5] text-main rounded-sm focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-lg placeholder-[#afafaf] dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                  className=" text-lg bg-transparent border-b border-b-[#e5e5e5] text-main rounded-sm focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-lg placeholder-[#afafaf] dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:-light"
                   required
                   placeholder="Title"
                 />
@@ -73,7 +73,7 @@ const Contact = () => {
                 <textarea
                   type="text"
                   id="message"
-                  className="shadow-sm text-lg bg-gray-50 border border-[#e5e5e5] text-main rounded-sm focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-lg placeholder-[#afafaf] dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                  className=" text-lg bg-transparent border border-[#e5e5e5] text-main rounded-sm focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-lg placeholder-[#afafaf] dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:-light"
                   required
                   placeholder="Message (1000 characters or less) "
                 />

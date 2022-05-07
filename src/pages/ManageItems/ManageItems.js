@@ -12,7 +12,7 @@ const ManageItems = () => {
           <div className="col-span-1 md:col-span-2 lg:col-span-2 pt-10 lg:pt-14">
             <div className="mb-4 ml-2">
               <Link className="mb-8" to="/">
-                <ReplyIcon className='w-6 text-mains' />
+                <ReplyIcon className="w-6 text-mains" />
               </Link>
             </div>
             <ul className="w-48 text-sm mx-auto sm:mx-0 font-medium text-mains bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
@@ -21,7 +21,7 @@ const ManageItems = () => {
                   className={({ isActive }) =>
                     isActive ? " text-main font-bold " : "   hover:text-mains "
                   }
-                  to="myitems"
+                  to="allitems"
                 >
                   All Items
                 </NavLink>
@@ -33,10 +33,19 @@ const ManageItems = () => {
                   }
                   to="additems"
                 >
-                  Add item
+                  Add Item
                 </NavLink>
               </li>
-             
+              <li className="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? " text-main font-bold " : "   hover:text-mains "
+                  }
+                  to="myitems"
+                >
+                  My Items
+                </NavLink>
+              </li>
             </ul>
           </div>
 

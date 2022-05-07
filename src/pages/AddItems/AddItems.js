@@ -1,8 +1,11 @@
 import { PlusSmIcon } from "@heroicons/react/outline";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 
 const AddItems = () => {
+  const [user] = useAuthState(auth);
   const [img, setImg] = useState("");
   const [carouselImg, setCarouselImg] = useState("");
   const [price, setPrice] = useState("");
@@ -10,8 +13,10 @@ const AddItems = () => {
   const [supplier, setSupplier] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  
 
-  const handleImgBlur = (event) => {
+ 
+  const handleImg = (event) => {
     setImg(event.target.value);
   };
   const handleCarouselImg = (event) => {
@@ -32,31 +37,36 @@ const AddItems = () => {
   const handleDescription = (event) => {
     setDescription(event.target.value);
   };
-
-  const handleUpdatedItem = (event) => {
+  // console.log(email);
+  console.log(name);
+   console.log(user.email);
+  const handleAddItem = (event) => {
     event.preventDefault();
-    const updatedProduct = {
-      img,
-      carouselImg,
-      price,
-      supplier,
-      name,
-      description,
-      quantity,
-    };
+
     // send data to the server
-    const url=`https://auto-vio.herokuapp.com/product`
     // const url = `http://localhost:5000/product`;
+    const url = `https://auto-vio.herokuapp.com/product`;
+    const email = user.email;
+
     fetch(url, {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(updatedProduct),
+      body: JSON.stringify({
+        email,
+        img,
+        carouselImg,
+        price,
+        supplier,
+        name,
+        description,
+        quantity,
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
       });
 
     event.target.reset();
@@ -73,15 +83,31 @@ const AddItems = () => {
             </h2>
           </div>
           {/* input from */}
-          <form className="mt-8 space-y-4" onSubmit={handleUpdatedItem}>
+          <form className="mt-8 space-y-4" onSubmit={handleAddItem}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
+              <div>
+                <label htmlFor="email" className="sr-only">
+                  email
+                </label>
+                <input
+                  // onChange={handleEmail}
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
+                  placeholder="user Email"
+                  value={user.email}
+                  disabled
+                />
+              </div>
               <div>
                 <label htmlFor="img" className="sr-only">
                   img
                 </label>
                 <input
-                  onBlur={handleImgBlur}
+                  onChange={handleImg}
                   id="img"
                   name="img"
                   type="text"
@@ -170,6 +196,8 @@ const AddItems = () => {
                   name="description"
                   type="text"
                   required
+                  rows="4"
+                  cols="50"
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Description"
                 />

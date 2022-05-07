@@ -8,13 +8,17 @@ const UpdateItem = () => {
   const [product, setProduct] = useState({});
 
   
+  const handleEmail = (event) => {
+    const { email, ...rest } = product;
+    const newEmail = event.target.value;
+    const updateEmail = { img: newEmail, ...rest };
+    setProduct(updateEmail);
+  };
   const handleImg = (event) => {
     const { img, ...rest } = product;
     const newImg = event.target.value;
     const updateImg = { img: newImg, ...rest };
     setProduct(updateImg);
-   
-
   };
   const handleCarouselImg = (event) => {
     const { carouselImg, ...rest } = product;
@@ -88,11 +92,10 @@ const UpdateItem = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        event.target.reset();
+        
       });
-    
-
-    
+      event.target.reset();
+      setProduct('');
     toast(`update Product successfully`);
   };
 
@@ -104,14 +107,31 @@ const UpdateItem = () => {
         <div className="max-w-sm w-full space-y-4">
           <div>
             <h2 className="mt-6 text-center text-3xl font-base text-main">
-              Update Item for{" "}
-              <span className="uppercase font-semibold">{product.name}</span>
+              Update Item for
+              <span className="uppercase text-3xl pl-2 font-normal ">
+                {product.name}
+              </span>
             </h2>
           </div>
           {/* input from */}
           <form className="mt-8 space-y-4" onSubmit={handleUpdateItem}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
+              <div>
+                <label htmlFor="email" className="sr-only">
+                  Email
+                </label>
+                <input
+                  onChange={handleEmail}
+                  id="email"
+                  name="email"
+                  type="email"
+                  className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
+                  placeholder="email"
+                  value={product.email || ""}
+                  disabled
+                />
+              </div>
               <div>
                 <label htmlFor="img" className="sr-only">
                   img
@@ -124,6 +144,7 @@ const UpdateItem = () => {
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Image url"
                   value={product.img || ""}
+                  disabled
                 />
               </div>
               <div>
@@ -138,6 +159,7 @@ const UpdateItem = () => {
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Carousel img url (optional)"
                   value={product.carouselImg || ""}
+                  disabled
                 />
               </div>
               <div>
@@ -152,6 +174,7 @@ const UpdateItem = () => {
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Price"
                   value={product.price || ""}
+                  disabled
                 />
               </div>
               <div>
@@ -180,6 +203,7 @@ const UpdateItem = () => {
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Supplier name"
                   value={product.supplier || ""}
+                  disabled
                 />
               </div>
               <div>
@@ -194,6 +218,7 @@ const UpdateItem = () => {
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Name"
                   value={product.name || ""}
+                  disabled
                 />
               </div>
               <div>
@@ -207,7 +232,10 @@ const UpdateItem = () => {
                   type="text"
                   className="mb-2 appearance-none rounded-none relative block w-full px-3 py-2 border bg-transparent border-mains placeholder-four  text-four  focus:outline-none focus:ring-mains focus:border-mains focus:z-10 sm:text-sm"
                   placeholder="Description"
+                  rows="4"
+                  cols="50"
                   value={product.description || ""}
+                  disabled
                 />
               </div>
             </div>

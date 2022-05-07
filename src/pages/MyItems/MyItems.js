@@ -1,20 +1,32 @@
 import { PencilAltIcon, TrashIcon } from "@heroicons/react/outline";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import {  NavLink } from "react-router-dom";
+import auth from "../../firebase.init";
 
-import useProducts from "../../hooks/useProducts";
-// import Modal from "../../components/Modal/Modal";
+// import useProducts from "../../hooks/useProducts";
+
 
 const MyItems = () => {
+  const [user] = useAuthState(auth)
 
-  const [products, setProducts] = useProducts([]);
+  const [products, setProducts] = useState([])
+  useEffect(()=>{
+    const email = user.email
+    const url =`http://localhost:5000/myproduct?email=${email}`
+    fetch(url)
+    .then(res => res.json())
+    .then(data => setProducts(data))
+  },[user])
+
+  // const [products, setProducts] = useProducts([]);
 
   const handleProductDelete = (id) => {
     const proceed = window.confirm("Are you want to delete");
     if (proceed) {
       
-      // const url = `http://localhost:5000/product/${id}`;
-      const url = `https://auto-vio.herokuapp.com/product/${id}`;
+      const url = `http://localhost:5000/product/${id}`;
+      // const url = `https://auto-vio.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -34,8 +46,14 @@ const MyItems = () => {
         <div className="max-w-sm w-full space-y-2">
           <div>
             <h2 className="mt-6 text-center text-3xl font-base text-main">
-              All Items List
+            My Items List
             </h2>
+            <h3 className="mt-2 text-center text-base  font-base text-eight">
+            {user.email}
+            </h3>
+            <h3 className="mt-1 text-center text-base pb-3 font-base text-eight">
+            Total Items: {products.length}
+            </h3>
           </div>
           {/* items card */}
           {products.map((product) => (

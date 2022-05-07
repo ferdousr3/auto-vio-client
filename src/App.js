@@ -16,6 +16,11 @@ import Register from "./pages/Register/Register";
 import RequireAuth from './components/RequireAuth/RequireAuth'
 import UpdateItem from "./pages/UpdateItem/UpdateItem";
 import DataSpinner from "./components/share/DataSpinner/DataSpinner";
+import Terms from "./pages/Terms/Terms";
+import Privacy from "./pages/Privacy/Privacy";
+import DigitalService from "./pages/DigitalServices/DigitalService";
+import AllItems from "./pages/AllItems/AllItems";
+import DeliveryItem from "./pages/Delivery/Delivery";
 
 function App() {
   return (
@@ -28,6 +33,9 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/digitalservice" element={<DigitalService />} />
             <Route path="login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             {/* <Route path="/updateitem/:id" element={<UpdateItem />} /> */}
@@ -42,6 +50,8 @@ function App() {
             >
               <Route path="updateitem/:id" element={<UpdateItem />} />
               <Route path="myitems" element={<MyItems />} />
+              <Route path="delivery/:id" element={<DeliveryItem/>} />
+              <Route path="allitems" element={<AllItems/>} />
               <Route path="additems" element={<AddItems />} />
             </Route>
             <Route path="/about" element={<About />} />
