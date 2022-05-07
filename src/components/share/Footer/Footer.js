@@ -107,10 +107,10 @@ const Footer = () => {
               </div> */}
 
               <form
-                className="relative max-w-xs"
+                className="relative max-w-xs "
                 onSubmit={handleSubscribeSubmit}
               >
-                <div className="flex absolute inset-y-0 left-0 items-center pl-3 ">
+                <div className="flex absolute inset-y-0 right-0 items-center pr-4 ">
                   <button
                     type="submit"
                     className="hover:text-white text-second text-sm cursor-pointer "
@@ -121,12 +121,12 @@ const Footer = () => {
                 <input
                   type="text"
                   id="input-group-1"
-                  className="bg-transparent border  border-six  placeholder:text-xs  text-sm focus:outline-none  text-second  focus:border-eight block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@flowbite.com"
+                  className="bg-transparent border  border-six  placeholder:text-sm  text-sm focus:outline-none  text-second  focus:border-eight block w-full pl-4 pr-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="exmp@mail.com"
                 />
               </form>
             </div>
-            <div className="col-span-1 md:col-span-3  pt-4">
+            <div className="col-span-1 md:col-span-3  pt-6">
               <div className="flex lg:justify-end  ">
                 {socials.map((social) => (
                   <a
@@ -142,7 +142,7 @@ const Footer = () => {
           </div>
           <div className="mt-4 pt-8 pb-10  text-center px-10 border-t border-mains">
             <div className="flex justify-center w-full pb-2 pt-2">
-              <img className="block pb-4" src={Logo} alt="autovio " />
+              <img className="block pb-4" src={Logo} alt="auto-vio " />
             </div>
             <p className="text-sm text-second sm:text-center dark:text-gray-400">
               © Copyright

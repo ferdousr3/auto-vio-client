@@ -37,7 +37,7 @@ const SocialLogin = () => {
       <div className="mx-auto pt-5">
         <button
           onClick={() => signInWithGoogle()}
-          className=" mx-auto flex w-full justify-around max-w-[270px] items-center border-2 border-main py-2 px-10 rounded-full "
+          className=" mx-auto flex w-full justify-around max-w-[270px] items-center border-2 border-main hover:border-2 hover:border-eight transition duration-200 py-2 px-10 rounded-full "
         >
           <FaGoogle className="text-2xl text-main mr-2  " />
           <p className="font-semibold">Sign Up with Google</p>

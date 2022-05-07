@@ -36,17 +36,7 @@ const ManageItems = () => {
                   Add item
                 </NavLink>
               </li>
-              <li className="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive ? " text-main font-bold " : "   hover:text-mains "
-                  }
-                  to="/updateitem"
-                >
-                  Update item
-                </NavLink>
-              </li>
-              <li className="w-full px-4 py-2 rounded-b-lg">Download</li>
+             
             </ul>
           </div>
 

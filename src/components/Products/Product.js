@@ -19,7 +19,7 @@ const Product = () => {
             />
           </div>
           <div className=" gap-8 grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-4">
-            {products.map((product) => (
+            {products.slice(0,6).map((product) => (
               <ProductCard key={product._id} product={product} />
             ))}
           </div>

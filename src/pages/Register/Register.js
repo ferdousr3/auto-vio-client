@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { LockClosedIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  useCreateUserWithEmailAndPassword
-  
-} from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Loading from "../../components/share/Loading/Loading";
 import { toast } from "react-toastify";
@@ -52,13 +49,8 @@ const Register = () => {
       return;
     }
     createUserWithEmailAndPassword(email, password);
-    if(user){
-      toast("Thank You for Registration")
-      
-    }
-    else if(!user){
-       toast("This Email have already an Account");
-    }
+
+    toast("Thank You for Registration");
   };
 
   return (
@@ -163,7 +155,7 @@ const Register = () => {
                 already have account!
                 <Link
                   to="/login"
-                  className="ml-1 font-bold text-main hover:text-mains "
+                  className="ml-1 font-bold text-five hover:text-orange-700 "
                 >
                   login
                 </Link>

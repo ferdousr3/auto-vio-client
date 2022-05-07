@@ -153,7 +153,7 @@ const Login = () => {
                 New user please!
                 <Link
                   to="/register"
-                  className=" ml-1  text-main hover:text-mains font-bold"
+                  className=" ml-1  text-five hover:text-orange-700 font-bold"
                 >
                   Sign up
                 </Link>
@@ -163,7 +163,7 @@ const Login = () => {
             <div className="text-sm">
               <button
                 onClick={forgotPassword}
-                className="font-bold text-main hover:text-mains"
+                className="font-bold text-five hover:text-orange-700 "
               >
                 Forgot password?
               </button>

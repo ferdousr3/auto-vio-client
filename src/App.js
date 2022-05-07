@@ -15,38 +15,41 @@ import { ToastContainer } from "react-toastify";
 import Register from "./pages/Register/Register";
 import RequireAuth from './components/RequireAuth/RequireAuth'
 import UpdateItem from "./pages/UpdateItem/UpdateItem";
+import DataSpinner from "./components/share/DataSpinner/DataSpinner";
 
 function App() {
   return (
     <>
       <Header />
-      <main className=" mx-auto main-height pt-16">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          {/* <Route path="/updateitem/:id" element={<UpdateItem />} /> */}
+      <DataSpinner>
+        <main className=" mx-auto main-height pt-16">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            {/* <Route path="/updateitem/:id" element={<UpdateItem />} /> */}
 
-          <Route
-            path="/manageitems"
-            element={
-              <RequireAuth>
-                <ManageItems />
-              </RequireAuth>
-            }
-          >
-            <Route path="updateitem/:id" element={<UpdateItem />} />
-            <Route path="myitems" element={<MyItems />} />
-            <Route path="additems" element={<AddItems />} />
-          </Route>
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </main>
+            <Route
+              path="/manageitems"
+              element={
+                <RequireAuth>
+                  <ManageItems />
+                </RequireAuth>
+              }
+            >
+              <Route path="updateitem/:id" element={<UpdateItem />} />
+              <Route path="myitems" element={<MyItems />} />
+              <Route path="additems" element={<AddItems />} />
+            </Route>
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </main>
+      </DataSpinner>
       <Footer />
       <ToastContainer />
     </>

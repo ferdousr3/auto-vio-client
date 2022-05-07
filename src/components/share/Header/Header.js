@@ -50,7 +50,7 @@ export default function Example() {
                 </div>
                 <div className="hidden lg:block sm:ml-6  ">
                   <ul className="flex space-x-3 items-center ">
-                    <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
+                    <li className="px-1 py-2 rounded-md text-sm font-medium uppercase text-second">
                       <NavLink
                         className={({ isActive }) =>
                           isActive ? " text-white " : "   hover:text-white "
@@ -60,7 +60,7 @@ export default function Example() {
                         Home
                       </NavLink>
                     </li>
-                    <li className="px-1 py-2 rounded-md text-sm font-semibold uppercase text-second">
+                    <li className="px-1 py-2 rounded-md text-sm font-medium uppercase text-second">
                       <NavLink
                         className={({ isActive }) =>
                           isActive ? " text-white " : "   hover:text-white "
@@ -70,26 +70,11 @@ export default function Example() {
                         Blogs
                       </NavLink>
                     </li>
-                    {/* <li
-                      className={
-                        user
-                          ? "px-1 py-2 rounded-md text-sm font-semibold uppercase text-second"
-                          : "hidden"
-                      }
-                    >
-                      <NavLink
-                        className={({ isActive }) =>
-                          isActive ? "text-white" : " hover:text-white "
-                        }
-                        to="/additems"
-                      >
-                        Add Items
-                      </NavLink>
-                    </li> */}
+                   
                     <li
                       className={
                         user
-                          ? "px-1 py-2 rounded-md text-sm font-semibold uppercase text-second"
+                          ? "px-1 py-2 rounded-md text-sm font-medium uppercase text-second"
                           : "hidden"
                       }
                     >
@@ -102,22 +87,6 @@ export default function Example() {
                         Manage Items
                       </NavLink>
                     </li>
-                    {/* <li
-                      className={
-                        user
-                          ? "px-1 py-2 rounded-md text-sm font-semibold uppercase text-second"
-                          : "hidden"
-                      }
-                    >
-                      <NavLink
-                        className={({ isActive }) =>
-                          isActive ? "text-white" : " hover:text-white "
-                        }
-                        to="/myitems"
-                      >
-                        My Items
-                      </NavLink>
-                    </li> */}
                   </ul>
                 </div>
               </div>
@@ -141,7 +110,7 @@ export default function Example() {
                 {user ? (
                   <button
                     onClick={handleSignOut}
-                    className="flex ml-4 justify-center items-center md:bg-third lg:ml-5 py-1  md:px-3 text-white hover:text-second  focus:outline-none text-base font-semibold md:border md:border-mains "
+                    className="flex ml-4 justify-center items-center md:bg-third lg:ml-5 py-1  md:px-3 text-white hover:text-second  focus:outline-none text-base font-medium md:border md:border-mains "
                   >
                     <span className="mr-2 hidden md:block">Logout</span>
                     <LogoutIcon className="h-6 w-6 " aria-hidden="true" />
@@ -149,7 +118,7 @@ export default function Example() {
                 ) : (
                   <NavLink
                     to="/login"
-                    className="flex ml-4 justify-center items-center md:bg-third lg:ml-5 py-1  md:px-3 text-white hover:text-second  focus:outline-none text-base font-semibold md:border md:border-mains "
+                    className="flex ml-4 justify-center items-center md:bg-third lg:ml-5 py-1  md:px-3 text-white hover:text-second  focus:outline-none text-base font-medium md:border md:border-mains "
                   >
                     <span className="mr-2 hidden md:block">Login</span>
                     <LoginIcon className="h-6 w-6 " aria-hidden="true" />
@@ -169,7 +138,7 @@ export default function Example() {
                 }
                 to="/"
               >
-                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-semibold uppercase text-second">
+                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-medium uppercase text-second">
                   Home
                 </Disclosure.Button>
               </NavLink>
@@ -179,7 +148,7 @@ export default function Example() {
                 }
                 to="/blogs"
               >
-                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-semibold uppercase text-second  ">
+                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-medium uppercase text-second  ">
                   Blogs
                 </Disclosure.Button>
               </NavLink>
@@ -189,7 +158,7 @@ export default function Example() {
                 }
                 to="/contact"
               >
-                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-semibold uppercase text-second  ">
+                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-medium uppercase text-second  ">
                   Contact
                 </Disclosure.Button>
               </NavLink>
@@ -198,36 +167,18 @@ export default function Example() {
          
               className={user ? "px-4 pt-1 pb-1  text-center " : "hidden"}
             >
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "text-white " : " hover:text-white   "
-                }
-                to="/additems"
-              >
-                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-semibold uppercase text-second">
-                  Add Items
-                </Disclosure.Button>
-              </NavLink>
+             
               <NavLink
                 className={({ isActive }) =>
                   isActive ? "text-white" : " hover:text-white  "
                 }
                 to="/manageitems"
               >
-                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-semibold uppercase text-second  ">
+                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-medium uppercase text-second  ">
                   Manage Items
                 </Disclosure.Button>
               </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "text-white" : " hover:text-white  "
-                }
-                to="/myitems"
-              >
-                <Disclosure.Button className="px-2 py-2 rounded-md text-sm font-semibold uppercase text-second  ">
-                  My Items
-                </Disclosure.Button>
-              </NavLink>
+              
             </div>
           </Disclosure.Panel>
         </>
