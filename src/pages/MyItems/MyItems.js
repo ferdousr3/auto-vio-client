@@ -1,31 +1,45 @@
 import { PencilAltIcon, TrashIcon } from "@heroicons/react/outline";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import {  NavLink } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { NavLink, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import axiosPrivate from "../../api/axiosPrivate";
 
 // import useProducts from "../../hooks/useProducts";
 
-
 const MyItems = () => {
-  const [user] = useAuthState(auth)
+  const navigate = useNavigate();
+  const [user] = useAuthState(auth);
 
-  const [products, setProducts] = useState([])
-  useEffect(()=>{
-    const email = user.email
-    const url = `https://auto-vio.herokuapp.com/myproduct?email=${email}`;
-    // const url =`http://localhost:5000/myproduct?email=${email}`
-    fetch(url)
-    .then(res => res.json())
-    .then(data => setProducts(data))
-  },[user])
+  const [products, setProducts] = useState([]);
 
-  // const [products, setProducts] = useProducts([]);
+  useEffect(() => {
+    const getProductPerUser = async () => {
+      const email = user?.email;
+      const url = `https://auto-vio.herokuapp.com/myproduct?email=${email}`;
+      // const url = `http://localhost:5000/myproduct?email=${email}`;
+      try {
+        const { data } = await axiosPrivate.get(url);
+        setProducts(data);
+      } catch (error) {
+        console.log(error.message);
+        if (
+          error.response.status === 401 ||
+          error.response.status === 403 ||
+          error.response.status === 404
+        ) {
+          signOut(auth);
+          navigate("/login");
+        }
+      }
+    };
+    getProductPerUser();
+  }, [user]);
 
   const handleProductDelete = (id) => {
     const proceed = window.confirm("Are you want to delete");
     if (proceed) {
-      
       // const url = `http://localhost:5000/product/${id}`;
       const url = `https://auto-vio.herokuapp.com/product/${id}`;
       fetch(url, {
@@ -34,7 +48,6 @@ const MyItems = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-    
             const remaining = products.filter((product) => product._id !== id);
             setProducts(remaining);
           }
@@ -47,13 +60,13 @@ const MyItems = () => {
         <div className="max-w-sm w-full space-y-2">
           <div>
             <h2 className="mt-6 text-center text-3xl font-base text-main">
-            My Items List
+              My Items List
             </h2>
             <h3 className="mt-2 text-center text-base  font-base text-eight">
-            {user.email}
+              {user.email}
             </h3>
             <h3 className="mt-1 text-center text-base pb-3 font-base text-eight">
-            Total Items: {products.length}
+              Total Items: {products.length}
             </h3>
           </div>
           {/* items card */}

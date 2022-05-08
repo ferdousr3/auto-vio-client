@@ -4,8 +4,8 @@ import TermsDetails from "../../components/TermsDetails/TermsDetails";
 const Privacy = () => {
   return (
     <>
-      <div className="container">
-        <div className=" mx-auto pt-20 pb-10  ">
+      <div className="container mx-auto">
+        <div className="  pt-20 pb-10  ">
           <div className=" pb-10">
             <h1 className=" text-3xl sm:text-5xl uppercase text-black font-light ">
               Our Privacy Policy

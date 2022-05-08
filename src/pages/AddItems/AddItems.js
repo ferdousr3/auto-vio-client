@@ -37,9 +37,7 @@ const AddItems = () => {
   const handleDescription = (event) => {
     setDescription(event.target.value);
   };
-  // console.log(email);
-  console.log(name);
-   console.log(user.email);
+
   const handleAddItem = (event) => {
     event.preventDefault();
 

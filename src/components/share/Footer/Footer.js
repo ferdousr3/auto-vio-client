@@ -119,6 +119,8 @@ const Footer = () => {
               <div className="flex lg:justify-end  ">
                 {socials.map((social) => (
                   <a
+                    target="_blank"
+                    rel="noreferrer"
                     className=" pl-8 text-2xl text-second hover:text-white "
                     key={social.name}
                     href={social.pathName}

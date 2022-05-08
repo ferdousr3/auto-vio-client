@@ -3,7 +3,7 @@ import React from "react";
 const TermsDetails = ({ title, firstSub, secondSub, thirdSub }) => {
   return (
     <>
-      <div className="container mx-auto pb-20 ">
+      <div className=" pb-20 ">
         <h1 className=" mb-6 text-3xl sm:text-3xl uppercase text-black font-light border-b border-b-[#e5e5e5] pb-4 ">
        
           {title}

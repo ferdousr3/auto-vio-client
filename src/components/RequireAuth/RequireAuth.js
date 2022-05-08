@@ -26,7 +26,6 @@ const RequireAuth = ({ children }) => {
   if (user.providerData[0]?.providerId ==='password' && !user.emailVerified) {
     return (
       <>
-       
         <div className="container">
           <div class="w-full container mt-20 mx-auto max-w-xs p-4 text-gray-500 bg-white rounded-lg border dark:bg-gray-800 dark:text-gray-400">
             <div class="flex">

@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
-  
 } from "react-firebase-hooks/auth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../../components/share/Loading/Loading";
 import { toast } from "react-toastify";
 import SocialLogin from "../../components/share/SocialLogin/SocialLogin";
+import useToken from "../../hooks/useToken";
 // import PageTitle from "../../components/share/PageTitle/PageTitle";
 
 const Login = () => {
@@ -22,6 +22,7 @@ const Login = () => {
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   const location = useLocation();
   const navigate = useNavigate();
+  const [token] = useToken(user);
 
   const from = location.state?.from?.pathname || "/home";
 
@@ -38,25 +39,26 @@ const Login = () => {
       <p className="text-sm text-red-900">{customError?.message}</p>
     );
   }
+
   useEffect(() => {
-    if (user) {
+    if (token) {
       navigate(from, { replace: true });
     }
   });
-  const handleSingIn = (event) => {
+
+  const handleSingIn = async (event) => {
     event.preventDefault();
     if (password.length < 6) {
       setCustomError("password must be 6 characters");
       return;
     }
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
   };
 
   const forgotPassword = async () => {
     setCustomError("");
     setPassword("");
     if (email !== "") {
-
       await sendPasswordResetEmail(email);
       toast("Sent password Rest Link");
     } else if (email === "") {

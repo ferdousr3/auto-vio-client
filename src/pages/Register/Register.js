@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LockClosedIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
@@ -6,6 +6,7 @@ import auth from "../../firebase.init";
 import Loading from "../../components/share/Loading/Loading";
 import { toast } from "react-toastify";
 import SocialLogin from "../../components/share/SocialLogin/SocialLogin";
+import useToken from "../../hooks/useToken";
 // import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const Register = () => {
@@ -15,12 +16,12 @@ const Register = () => {
   const [customError, setCustomError] = useState("");
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [token] = useToken(user)
 
   const navigate = useNavigate();
 
   const handleEmailBlur = (event) => {
     setEmail(event.target.value);
-    console.log(email);
   };
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -28,9 +29,13 @@ const Register = () => {
   const handleConfirmPasswordChange = (event) => {
     setConfirmPassword(event.target.value);
   };
-  if (user) {
-    navigate("/login");
-  }
+  useEffect(() => {
+    if (token) {
+      navigate("/login");
+      toast("Thank You for Registration");
+    }
+  });
+  
   // error handle
   let errorMessages;
   if (customError || error) {
@@ -38,6 +43,7 @@ const Register = () => {
       <p className="text-sm text-red-900">{customError?.message}</p>
     );
   }
+  
   const handleCreateUser = (event) => {
     event.preventDefault();
     if (password !== confirmPassword) {
@@ -49,9 +55,8 @@ const Register = () => {
       return;
     }
     createUserWithEmailAndPassword(email, password);
-
-    toast("Thank You for Registration");
   };
+  
 
   return (
     <>
