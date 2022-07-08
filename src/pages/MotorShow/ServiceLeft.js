@@ -4,10 +4,10 @@ import ServiceButton from "../../components/share/Button/ServiceButton";
 const ServiceLeft = ({ img, title, subTitle, description }) => {
   return (
     <>
-      <div className="bg-main  pb-40">
+      <div className="bg-main pt-14 pb-40">
         <div className=" mx-auto   ">
-          <div className="grid grid-cols-1 lg:grid-cols-7 gap-8">
-            <div className="col-span-1 lg:col-span-3 flex items-start md:ml-20">
+          <div className="grid grid-cols-1 lg:grid-cols-8 gap-8">
+            <div className="col-span-1 lg:col-span-3 flex items-start md:ml-20 md:border-b border-six">
               <div className="px-3 ">
                 <h1 className=" pb-6  text-five font-normal text-xl  uppercase sm:font-light">
                   {title}
@@ -19,11 +19,11 @@ const ServiceLeft = ({ img, title, subTitle, description }) => {
                   {description}
                 </p>
                 <div className="w-36 mt-8">
-                  <ServiceButton text="Discover More" path="/" />
+                  <ServiceButton text="View Event" path="/" />
                 </div>
               </div>
             </div>
-            <div className="col-span-1 lg:col-span-4 md:ml-10">
+            <div className="col-span-1 lg:col-span-5 md:ml-10">
               <img
                 className="h-auto w-[100%] "
                 src={img}

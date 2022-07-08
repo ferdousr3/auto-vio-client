@@ -6,15 +6,15 @@ const ServiceRight = ({img,title,subTitle,description}) => {
     <>
       <div className="bg-main pt-40 pb-40">
         <div className=" mx-auto  ">
-          <div className="grid grid-cols-1 lg:grid-cols-7 gap-8">
-            <div className="col-span-1 lg:col-span-4  md:mr-10">
+          <div className="grid grid-cols-1 lg:grid-cols-8 gap-8">
+            <div className="col-span-1 lg:col-span-5  md:mr-10">
               <img
                 className="h-auto  w-[100%] "
                 src={img}
                 alt="auto-vio award"
               />
             </div>
-            <div className="col-span-1 lg:col-span-3 flex items-start md:mr-10">
+            <div className="col-span-1 lg:col-span-3 flex items-start md:mr-10 md:border-b border-six">
               <div className="px-3 sm:pr-10">
                 <h1 className=" pb-6  text-five font-normal text-xl  uppercase sm:font-light">
                   {title}
@@ -26,7 +26,7 @@ const ServiceRight = ({img,title,subTitle,description}) => {
                   {description}
                 </p>
                 <div className="w-36 mt-8">
-                  <ServiceButton text="Discover More" path="/" />
+                  <ServiceButton text="View Event" path="/" />
                 </div>
               </div>
             </div>

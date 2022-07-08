@@ -1,16 +1,23 @@
 import React from 'react';
 
-const WhiteText = ({title, description}) => {
+const WhiteText = ({title,img, description}) => {
   return (
     <>
       <div className="bg-main pt-40 pb-32">
-        <div className="container mx-auto max-w-4xl">
-          <h1 className="text-white font-light text-xl  uppercase sm:font-light">
-            {title}
-          </h1>
-          <h2 className="text-white  text-xl sm:text-2xl lg:text-4xl font-normal lg:pr-24 pt-8 ">
-            {description}
-          </h2>
+        <div className="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-6">
+          <div className=" flex justify-center items-center md:col-span-2 ">
+            <img className="w-44" src={img} alt="red Dot" />
+          </div>
+          <div className=" lg:border-l lg:border-l-six lg:pl-20 flex justify-center items-center md:col-span-4">
+            <div className="">
+              <h1 className="text-white font-light text-2xl md:text-4xl  uppercase sm:font-light">
+                {title}
+              </h1>
+              <p className="text-white text-base font-light  pt-8 ">
+                {description}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </>
