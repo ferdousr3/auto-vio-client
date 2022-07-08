@@ -48,10 +48,10 @@ function App() {
                 </RequireAuth>
               }
             >
+              <Route index element={<AllItems />} />
               <Route path="updateitem/:id" element={<UpdateItem />} />
               <Route path="myitems" element={<MyItems />} />
-              <Route path="delivery/:id" element={<DeliveryItem/>} />
-              <Route path="allitems" element={<AllItems/>} />
+              <Route path="delivery/:id" element={<DeliveryItem />} />
               <Route path="additems" element={<AddItems />} />
             </Route>
             <Route path="/about" element={<About />} />

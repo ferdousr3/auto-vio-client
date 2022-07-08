@@ -8,8 +8,8 @@ const ManageItems = () => {
   return (
     <>
       <div className="container mx-auto">
-        <div className=" max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-5 lg:grid-cols-5">
-          <div className="col-span-1 md:col-span-2 lg:col-span-2 pt-10 lg:pt-14">
+        <div className=" max-w-4xl mx-auto grid grid-cols-1 gap-4  lg:grid-cols-6 lg:gap-10">
+          <div className="col-span-1  lg:col-span-2 pt-10 lg:pt-14">
             <div className="mb-4 ml-2">
               <Link className="mb-8" to="/">
                 <ReplyIcon className="w-6 text-mains" />
@@ -21,7 +21,7 @@ const ManageItems = () => {
                   className={({ isActive }) =>
                     isActive ? " text-main font-bold " : "   hover:text-mains "
                   }
-                  to="allitems"
+                  to="/manageitems"
                 >
                   All Items
                 </NavLink>
@@ -49,7 +49,7 @@ const ManageItems = () => {
             </ul>
           </div>
 
-          <div className="col-span-1 md:col-span-3 lg:col-span-3">
+          <div className="col-span-1  lg:col-span-4">
             <Outlet />
           </div>
         </div>
