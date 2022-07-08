@@ -2,6 +2,7 @@ import { PlusSmIcon } from "@heroicons/react/outline";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 import auth from "../../firebase.init";
 
 const AddItems = () => {
@@ -73,6 +74,9 @@ const AddItems = () => {
 
   return (
     <>
+    {/* page title */}
+    <PageTitle title='Add Item' />
+    {/* main parts of the page */}
       <div className="  min-h-full flex items-center justify-center pt-8 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-sm w-full space-y-4">
           <div>

@@ -1,4 +1,5 @@
 import React from "react";
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 import useProducts from "../../hooks/useProducts";
 import ItemsRow from "./ItemsRow";
 
@@ -7,6 +8,9 @@ const AllItems = () => {
 
   return (
     <>
+    {/* PageTitle */}
+    <PageTitle title='All Items' />
+    {/* main parts of the page */}
       <div className="  min-h-full flex-col lg:flex items-center justify-center pt-8 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="   space-y-2">
           <div>

@@ -71,6 +71,26 @@ export default function Example() {
                         Blogs
                       </NavLink>
                     </li>
+                    <li className="px-1 py-2 rounded-md text-sm font-medium uppercase text-second">
+                      <NavLink
+                        className={({ isActive }) =>
+                          isActive ? " text-white " : "   hover:text-white "
+                        }
+                        to="/about"
+                      >
+                        About
+                      </NavLink>
+                    </li>
+                    <li className="px-1 py-2 rounded-md text-sm font-medium uppercase text-second">
+                      <NavLink
+                        className={({ isActive }) =>
+                          isActive ? " text-white " : "   hover:text-white "
+                        }
+                        to="/contact"
+                      >
+                        Contact
+                      </NavLink>
+                    </li>
                    
                     <li
                       className={

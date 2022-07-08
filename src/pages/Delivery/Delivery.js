@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 import './Delivery.css'
 
 
@@ -50,6 +51,9 @@ const DeliveryItem = () => {
 
   return (
     <>
+      {/* page title */}
+      <PageTitle title="Delivery" />
+      {/* main parts of the page */}
       <div className="  min-h-full flex items-center justify-center pt-8 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-sm w-full space-y-4">
           <div>

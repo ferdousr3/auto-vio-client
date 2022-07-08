@@ -21,9 +21,10 @@ code {
     monospace;
 }
 .main-height {
-  min-height: 65vh;
+  min-height: 100vh;
 }
 .required:after {
     content:" *";
     color: #af6249;
+  
   }

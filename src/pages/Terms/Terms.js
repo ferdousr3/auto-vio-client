@@ -1,9 +1,13 @@
 import React from "react";
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 import TermsDetails from "../../components/TermsDetails/TermsDetails";
 
 const Terms = () => {
   return (
     <>
+      {/* page title */}
+      <PageTitle title="Terms" />
+      {/* main parts of the page */}
       <div className="container mx-auto">
         <div className="  pt-20 pb-10  ">
           <div className=" pb-10">

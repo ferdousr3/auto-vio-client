@@ -21,6 +21,8 @@ import Privacy from "./pages/Privacy/Privacy";
 import DigitalService from "./pages/DigitalServices/DigitalService";
 import AllItems from "./pages/AllItems/AllItems";
 import DeliveryItem from "./pages/Delivery/Delivery";
+import ConceptCar from "./pages/ConceptCar/ConceptCar";
+import MotorShow from "./pages/MotorShow/MotorShow";
 
 function App() {
   return (
@@ -35,7 +37,9 @@ function App() {
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
-            <Route path="/digitalservice" element={<DigitalService />} />
+            <Route path="/digitalService" element={<DigitalService />} />
+            <Route path="/conceptCar" element={<ConceptCar />} />
+            <Route path="/motorShow" element={<MotorShow />} />
             <Route path="login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             {/* <Route path="/updateitem/:id" element={<UpdateItem />} /> */}

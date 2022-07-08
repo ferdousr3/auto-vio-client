@@ -2,17 +2,20 @@
   {
     "img": "https://i.ibb.co/ssK2jXj/concept.jpg",
     "name": "CONCEPT CAR",
-    "description": "Take a closer look at the Genesis design philosophy through our concept vehicles. Explore perfect athletic proportions, precise craftsmanship and attention to detail."
+    "description": "Take a closer look at the Genesis design philosophy through our concept vehicles. Explore perfect athletic proportions, precise craftsmanship and attention to detail.",
+    "navigate": "conceptCar"
   },
   {
     "img": "https://i.ibb.co/z7gnFLL/motor-show.jpg",
     "name": "MOTOR SHOW",
-    "description": "Experience the most up-to-date line-up and the luxury of the Genesis brand in the unique booth."
+    "description": "Experience the most up-to-date line-up and the luxury of the Genesis brand in the unique booth.",
+    "navigate": "motorShow"
   },
   {
     "img": "https://i.ibb.co/b2yrBZ6/digital-services.jpg",
     "name": "DIGITAL SERVICES",
-    "description": "We have mindfully chosen the technology that adds more convenience and safety to our customers' daily lives."
+    "description": "We have mindfully chosen the technology that adds more convenience and safety to our customers' daily lives.",
+    "navigate": "digitalService"
   } 
 ]
 

@@ -1,0 +1,19 @@
+.my-btn {
+  font-family:  'Roboto', sans-serif;
+  width: 200px;
+  height: 100%;
+  background-color: #111;
+  padding: 0.5rem 0rem;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  outline: none;
+  box-shadow: inset 0 0 0 0 #ffffff;
+  transition: ease-out 0.5s;
+  padding: 10px 0px;
+}
+.my-btn:hover {
+  font-family:  'Roboto', sans-serif;
+  box-shadow: inset 200px 0 0 0 #ffffff;
+  color: #111111;
+  font-weight: 600;
+}

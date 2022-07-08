@@ -2,6 +2,7 @@ import { UploadIcon } from "@heroicons/react/outline";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 
 const UpdateItem = () => {
   const { id } = useParams();
@@ -103,6 +104,9 @@ const UpdateItem = () => {
 
   return (
     <>
+      {/* page title */}
+      <PageTitle  title="Update Item" />
+      {/* main parts of the page */}
       <div className="  min-h-full flex items-center justify-center pt-8 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-sm w-full space-y-4">
           <div>

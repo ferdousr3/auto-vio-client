@@ -10,6 +10,7 @@ import Loading from "../../components/share/Loading/Loading";
 import { toast } from "react-toastify";
 import SocialLogin from "../../components/share/SocialLogin/SocialLogin";
 import useToken from "../../hooks/useToken";
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 // import PageTitle from "../../components/share/PageTitle/PageTitle";
 
 const Login = () => {
@@ -69,6 +70,9 @@ const Login = () => {
 
   return (
     <>
+      {/* page title */}
+      <PageTitle title="Login" />
+      {/* main parts of the page */}
       {/* <PageTitle title="Login" /> */}
       <div className="min-h-full flex items-center justify-center pt-12 pb-40 px-4 sm:px-6 lg:px-5">
         <div className="max-w-sm w-full space-y-4">

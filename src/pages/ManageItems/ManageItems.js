@@ -1,12 +1,16 @@
 import React from "react";
 import { NavLink, Outlet,Link } from "react-router-dom";
 import {ReplyIcon} from '@heroicons/react/outline'
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 
 const ManageItems = () => {
 
   
   return (
     <>
+    {/* page title */}
+    <PageTitle title='Manage Items'  />
+    {/* main parts of the page */}
       <div className="container mx-auto">
         <div className=" max-w-4xl mx-auto grid grid-cols-1 gap-4  lg:grid-cols-6 lg:gap-10">
           <div className="col-span-1  lg:col-span-2 pt-10 lg:pt-14">

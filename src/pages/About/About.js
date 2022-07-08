@@ -1,10 +1,14 @@
 import React from "react";
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 import About1 from "../../images/about/about.jpg";
 import About3 from "../../images/about/about3.jpg";
 
 const About = () => {
   return (
     <>
+      {/* page title */}
+      <PageTitle title="About" />
+      {/* main parts of the page */}
       {/*!-----> first section -------> */}
       <div className="relative pt-0 ">
         <img

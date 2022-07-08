@@ -1,10 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 
 const Error = () => {
   const navigate = useNavigate();
   return (
     <div className="container pt-24 pb-5 max-w-3xl lg:max-w-5xl mx-auto">
+      {/* page title */}
+      <PageTitle title="Page Not found" />
+      {/* main parts of the page */}
       <div className=" bg-[url('/src/images/bg/bg-images.png')] bg-no-repeat grid grid-cols-1 sm:grid-cols-2 md:grid-cols-7 mx-auto justify-center w-full ">
         <div className="col-span-2">
           <h1 className="text-5xl font-extrabold text-mains lg:text-9xl ">

@@ -5,6 +5,7 @@ import { signOut } from "firebase/auth";
 import { NavLink, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import axiosPrivate from "../../api/axiosPrivate";
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 
 // import useProducts from "../../hooks/useProducts";
 
@@ -35,7 +36,7 @@ const MyItems = () => {
       }
     };
     getProductPerUser();
-  }, [user]);
+  }, [user,navigate]);
 
   const handleProductDelete = (id) => {
     const proceed = window.confirm("Are you want to delete");
@@ -56,6 +57,8 @@ const MyItems = () => {
   };
   return (
     <>
+    {/* PageTitle */}
+    <PageTitle title='My Items' />
       <div className="  min-h-full flex items-center justify-center pt-8 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-sm w-full space-y-2">
           <div>

@@ -7,6 +7,7 @@ import Loading from "../../components/share/Loading/Loading";
 import { toast } from "react-toastify";
 import SocialLogin from "../../components/share/SocialLogin/SocialLogin";
 import useToken from "../../hooks/useToken";
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 // import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const Register = () => {
@@ -60,6 +61,9 @@ const Register = () => {
 
   return (
     <>
+      {/* page title */}
+      <PageTitle title="Registration" />
+      {/* main parts of the page */}
       {/* <PageTitle title="Registration" /> */}
       <div className="  min-h-full flex items-center justify-center pt-12 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-sm w-full space-y-4">

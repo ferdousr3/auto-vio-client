@@ -1,9 +1,13 @@
 import React from "react";
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 import "./Contact.css";
 
 const Contact = () => {
   return (
     <>
+      {/* page title */}
+      <PageTitle title="Contact" />
+      {/* main parts of the page */}
       <div className="container mx-auto py-16 md:py-24 ">
         <div className="">
           <div className="border-b border-b-black pb-10">

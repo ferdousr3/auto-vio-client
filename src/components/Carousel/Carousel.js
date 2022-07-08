@@ -12,6 +12,7 @@ import useProducts from "../../hooks/useProducts";
 
 const Carousel = () => {
   const [products] = useProducts([]);
+  // console.log(products);
 
   return (
     <>

@@ -5,7 +5,7 @@ const PageTitle = ({ title }) => {
   return (
     <>
       <Helmet>
-        <title>{title}-Auto-vio</title>
+        <title>{title} | Auto-vio</title>
       </Helmet>
     </>
   );

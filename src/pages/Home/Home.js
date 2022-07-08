@@ -3,6 +3,7 @@ import Award from "../../components/Award/Award";
 import Carousel from "../../components/Carousel/Carousel";
 import Product from "../../components/Products/Product";
 import RelatedContents from "../../components/RelatedContents/RelatedContents";
+import PageTitle from "../../components/share/PageTitle/PageTitle";
 import SectionTitle from "../../components/share/SectionTitle/SectionTitle";
 
 // import PageTitle from '../../components/share/PageTitle/PageTitle';
@@ -10,6 +11,9 @@ import SectionTitle from "../../components/share/SectionTitle/SectionTitle";
 const Home = () => {
   return (
     <>
+      {/* page title */}
+      <PageTitle title="Home" />
+      {/* main parts of the page */}
       {/* <PageTitle title='Home' /> */}
       {/* carousel */}
       <section className="pt-0">
