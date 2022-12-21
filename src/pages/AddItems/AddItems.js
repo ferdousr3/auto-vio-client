@@ -44,7 +44,7 @@ const AddItems = () => {
 
     // send data to the server
     // const url = `http://localhost:5000/product`;
-    const url = `https://auto-vio.herokuapp.com/product`;
+    const url = `https://auto-vio.onrender.com/product`;
     const email = user.email;
 
     fetch(url, {

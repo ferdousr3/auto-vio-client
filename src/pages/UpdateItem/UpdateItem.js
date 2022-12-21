@@ -73,7 +73,7 @@ const UpdateItem = () => {
   // data load from api by id
   useEffect(() => {
     // const url = `http://localhost:5000/product/${id}`;
-    const url = `https://auto-vio.herokuapp.com/product/${id}`;
+    const url = `https://auto-vio.onrender.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
@@ -83,7 +83,7 @@ const UpdateItem = () => {
     event.preventDefault();
     // send data to the server
     // const url = `http://localhost:5000/product/${id}`;
-    const url = `https://auto-vio.herokuapp.com/product/${id}`;
+    const url = `https://auto-vio.onrender.com/product/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

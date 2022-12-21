@@ -1,11 +1,11 @@
 import { PencilAltIcon, TrashIcon } from "@heroicons/react/outline";
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { signOut } from "firebase/auth";
 import { NavLink, useNavigate } from "react-router-dom";
-import auth from "../../firebase.init";
 import axiosPrivate from "../../api/axiosPrivate";
 import PageTitle from "../../components/share/PageTitle/PageTitle";
+import auth from "../../firebase.init";
 
 // import useProducts from "../../hooks/useProducts";
 
@@ -18,7 +18,7 @@ const MyItems = () => {
   useEffect(() => {
     const getProductPerUser = async () => {
       const email = user?.email;
-      const url = `https://auto-vio.herokuapp.com/myproduct?email=${email}`;
+      const url = `https://auto-vio.onrender.com/myproduct?email=${email}`;
       // const url = `http://localhost:5000/myproduct?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
@@ -42,7 +42,7 @@ const MyItems = () => {
     const proceed = window.confirm("Are you want to delete");
     if (proceed) {
       // const url = `http://localhost:5000/product/${id}`;
-      const url = `https://auto-vio.herokuapp.com/product/${id}`;
+      const url = `https://auto-vio.onrender.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })

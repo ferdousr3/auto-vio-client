@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import SectionTitle from '../share/SectionTitle/SectionTitle';
 import { FaChevronRight } from "react-icons/fa";
-import './RelatedContent.css'
 import { Link } from 'react-router-dom';
+import SectionTitle from '../share/SectionTitle/SectionTitle';
+import './RelatedContent.css';
 
 
 const RelatedContents = () => {
  const [contents, setContents] = useState([])
  useEffect(()=>{
     // const url = `http://localhost:5000/content`;
-   const url= `https://auto-vio.herokuapp.com/content`
+   const url= `https://auto-vio.onrender.com/content`
    fetch(url)
    .then(res => res.json())
    .then(data => setContents(data))

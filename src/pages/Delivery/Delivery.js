@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import PageTitle from "../../components/share/PageTitle/PageTitle";
-import './Delivery.css'
+import './Delivery.css';
 
 
 const DeliveryItem = () => {
@@ -14,7 +14,7 @@ const DeliveryItem = () => {
   // data load from api by id
   useEffect(() => {
     // const url = `http://localhost:5000/product/${id}`;
-    const url = `https://auto-vio.herokuapp.com/product/${id}`;
+    const url = `https://auto-vio.onrender.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
@@ -28,7 +28,7 @@ const DeliveryItem = () => {
       
       // send data to the server
       // const url = `http://localhost:5000/product/${id}`;
-      const url = `https://auto-vio.herokuapp.com/product/${id}`;
+      const url = `https://auto-vio.onrender.com/product/${id}`;
       fetch(url, {
         method: "PATCH",
         headers: {
